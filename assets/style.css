@@ -2,6 +2,12 @@
    ASCENDR — design system
    Dark editorial / cinematic sports campaign.
    Type: Anton (display) · Archivo (UI + body) · Instrument Serif (editorial)
+
+   Two rules learned the hard way:
+   1. CSS never hides content. Reveal states are scoped behind .rv-on, which
+      app.js adds only once it is actually running.
+   2. Anything carrying .wrap must use padding-block, never the `padding`
+      shorthand, or it wipes out the horizontal gutter.
    ========================================================================== */
 
 :root{
@@ -18,7 +24,6 @@
   --mute-2:#6B6862;
 
   --lime:#D8FF3E;
-  --lime-d:#B9E017;
   --ember:#FF5B2E;
   --mint:#5BE49B;
   --amber:#FFC93F;
@@ -26,7 +31,6 @@
   --max:1240px;
   --gut:clamp(20px,4vw,48px);
 
-  --t-mega:clamp(52px,11.5vw,168px);
   --t-h1:clamp(42px,8vw,110px);
   --t-h2:clamp(32px,5.2vw,74px);
   --t-h3:clamp(24px,3vw,38px);
@@ -37,7 +41,6 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-/* overflow-x must sit on <html> as well, or the scrolling box moves off the root */
 html{-webkit-text-size-adjust:100%;overflow-x:hidden}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 
@@ -47,7 +50,6 @@ body{
   font-family:'Archivo',system-ui,-apple-system,sans-serif;
   font-size:var(--t-body);
   line-height:1.6;
-  font-weight:400;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
@@ -56,10 +58,7 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 ::selection{background:var(--lime);color:var(--ink)}
 
-/* NB: anything that also carries .wrap must use padding-block, never the
-   `padding` shorthand, or it wipes out this horizontal gutter. */
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
-.wide{max-width:1560px;margin:0 auto;padding:0 var(--gut)}
 
 /* ---------- FILM GRAIN ---------- */
 body::before{
@@ -74,15 +73,14 @@ body::before{
 }
 @media (prefers-reduced-motion:reduce){body::before{animation:none}}
 
-/* ---------- TYPE PRIMITIVES ---------- */
-.d1,.d2,.d3,h1,h2,h3{
+/* ---------- TYPE ---------- */
+h1,h2,h3{
   font-family:'Anton','Archivo',sans-serif;font-weight:400;
   text-transform:uppercase;line-height:.88;letter-spacing:-.012em;
 }
-.d1,h1{font-size:var(--t-h1)}
-.d2,h2{font-size:var(--t-h2)}
-.d3,h3{font-size:var(--t-h3)}
-.mega{font-family:'Anton',sans-serif;font-size:var(--t-mega);line-height:.82;text-transform:uppercase;letter-spacing:-.022em}
+h1{font-size:var(--t-h1)}
+h2{font-size:var(--t-h2)}
+h3{font-size:var(--t-h3)}
 
 .ser{font-family:'Instrument Serif',Georgia,serif;font-style:italic;text-transform:none;letter-spacing:-.01em;font-weight:400}
 .lime{color:var(--lime)}
@@ -106,16 +104,10 @@ body::before{
   overflow:hidden;isolation:isolate;transition:color .4s var(--ease);
 }
 .btn{background:var(--lime);color:var(--ink)}
-.btn::after{
-  content:"";position:absolute;inset:0;z-index:-1;background:var(--paper);
-  transform:translateY(101%);transition:transform .5s var(--ease);
-}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--paper);transform:translateY(101%);transition:transform .5s var(--ease)}
 .btn:hover::after{transform:translateY(0)}
 .ghost{color:var(--paper);border:1px solid var(--hair-2);background:transparent}
-.ghost::after{
-  content:"";position:absolute;inset:0;z-index:-1;background:var(--paper);
-  transform:translateY(101%);transition:transform .5s var(--ease);
-}
+.ghost::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--paper);transform:translateY(101%);transition:transform .5s var(--ease)}
 .ghost:hover{color:var(--ink);border-color:var(--paper)}
 .ghost:hover::after{transform:translateY(0)}
 .btn span,.ghost span{position:relative}
@@ -138,14 +130,14 @@ body::before{
 /* ---------- NAV ---------- */
 .nav{
   position:sticky;top:0;z-index:100;
-  background:rgba(8,9,10,.55);backdrop-filter:blur(20px) saturate(140%);
+  background:rgba(8,9,10,.62);backdrop-filter:blur(20px) saturate(140%);
   border-bottom:1px solid transparent;transition:background .4s,border-color .4s;
 }
-.nav.stuck{background:rgba(8,9,10,.92);border-bottom-color:var(--hair)}
+.nav.stuck{background:rgba(8,9,10,.94);border-bottom-color:var(--hair)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
 .mark{font-family:'Anton',sans-serif;font-size:23px;letter-spacing:.005em;text-transform:uppercase;line-height:1;display:flex;align-items:baseline}
 .mark i{color:var(--lime);font-style:normal}
-.nav-links{display:flex;gap:34px;font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--mute)}
+.nav-links{display:flex;gap:34px;font-size:13px;font-weight:500;color:var(--mute)}
 .nav-links a{position:relative;transition:color .3s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:var(--lime);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
 .nav-links a:hover,.nav-links a.on{color:var(--paper)}
@@ -159,19 +151,19 @@ body::before{
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:min(84vh,860px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:0;z-index:-2;background-image:var(--img-hero);background-size:cover;background-position:center 38%;
-  filter:contrast(1.14) saturate(.72) brightness(.86);
+  filter:contrast(1.14) saturate(.72) brightness(.82);
   animation:kb 26s ease-out forwards;
 }
 @keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
 @media (prefers-reduced-motion:reduce){.hero-bg{animation:none;transform:scale(1)}}
 .hero-scrim{position:absolute;inset:0;z-index:-1;
   background:
-    radial-gradient(120% 90% at 78% 22%, rgba(216,255,62,.10), transparent 58%),
-    linear-gradient(to top, var(--ink) 3%, rgba(8,9,10,.93) 30%, rgba(8,9,10,.62) 64%, rgba(8,9,10,.74) 100%);
+    radial-gradient(120% 90% at 78% 20%, rgba(216,255,62,.10), transparent 56%),
+    linear-gradient(to top, var(--ink) 2%, rgba(8,9,10,.94) 34%, rgba(8,9,10,.66) 68%, rgba(8,9,10,.76) 100%);
 }
 .hero-in{position:relative;width:100%;
   padding-left:var(--gut);padding-right:var(--gut);
-  padding-block:clamp(96px,13vh,132px) clamp(52px,7vh,76px);
+  padding-block:clamp(88px,12vh,124px) clamp(48px,7vh,72px);
 }
 .hero h1{max-width:15ch}
 .hero .lede{margin-top:30px}
@@ -182,25 +174,22 @@ body::before{
 .pill{
   display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--paper);border:1px solid var(--hair-2);padding:9px 16px;border-radius:100px;
-  background:rgba(8,9,10,.4);backdrop-filter:blur(8px);margin-bottom:34px;font-weight:500;
+  background:rgba(8,9,10,.4);backdrop-filter:blur(8px);margin-bottom:30px;font-weight:500;
 }
-.dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(216,255,62,.6);animation:ping 2.4s infinite}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:ping 2.4s infinite}
 @keyframes ping{0%{box-shadow:0 0 0 0 rgba(216,255,62,.55)}70%{box-shadow:0 0 0 9px rgba(216,255,62,0)}100%{box-shadow:0 0 0 0 rgba(216,255,62,0)}}
 
+/* Masked headline lines. Visible by default — app.js applies the transform
+   inline, so no copy is ever trapped behind a stylesheet. */
 .mline{display:block;overflow:hidden}
-.mline>span{display:block;transform:translateY(105%);transition:transform 1.05s var(--ease)}
-.ready .mline>span{transform:translateY(0)}
-.ready .mline:nth-child(2)>span{transition-delay:.1s}
-.ready .mline:nth-child(3)>span{transition-delay:.2s}
-.ready .mline:nth-child(4)>span{transition-delay:.3s}
-/* if JS never runs, show the text rather than hiding it forever */
-.no-js .mline>span{transform:none}
+.mline>span{display:block}
 
 /* ---------- SCROLL REVEAL ---------- */
-[data-rv]{opacity:0;transform:translateY(26px);filter:blur(5px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
-[data-rv].in{opacity:1;transform:none;filter:none}
-.no-js [data-rv]{opacity:1;transform:none;filter:none}
-@media (prefers-reduced-motion:reduce){[data-rv]{opacity:1;transform:none;filter:none}}
+/* .rv-on is added by app.js. Without JS, everything is simply visible. */
+[data-rv]{transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.rv-on [data-rv]{opacity:0;transform:translateY(26px);filter:blur(5px)}
+.rv-on [data-rv].in{opacity:1;transform:none;filter:none}
+@media (prefers-reduced-motion:reduce){.rv-on [data-rv]{opacity:1;transform:none;filter:none}}
 
 /* ---------- MARQUEE ---------- */
 .mq{border-block:1px solid var(--hair);padding:18px 0;overflow:hidden;white-space:nowrap;background:var(--ink-1)}
@@ -258,8 +247,7 @@ body::before{
 .mod{
   display:grid;grid-template-columns:70px minmax(0,1.05fr) minmax(0,1.35fr) auto;
   gap:clamp(16px,3vw,44px);align-items:start;
-  padding:clamp(28px,3.4vw,44px) 0;border-bottom:1px solid var(--hair);
-  position:relative;
+  padding:clamp(28px,3.4vw,44px) 0;border-bottom:1px solid var(--hair);position:relative;
 }
 .mod::before{content:"";position:absolute;left:calc(var(--gut) * -1);right:calc(var(--gut) * -1);top:0;bottom:0;background:var(--ink-1);opacity:0;transition:opacity .5s;z-index:-1}
 .mod:hover::before{opacity:1}
@@ -381,8 +369,8 @@ body::before{
 .pil:last-child{border-bottom:none}
 .ph{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .ph b.pn{font-family:'Anton',sans-serif;font-size:12px;color:var(--mute-2);min-width:24px;letter-spacing:.06em}
-.ph h4{flex:1 1 auto;font-size:16.5px;font-weight:600;letter-spacing:-.005em}
-.psc{font-family:'Anton',sans-serif;font-size:17px;min-width:64px;text-align:right;letter-spacing:.01em}
+.ph h4{flex:1 1 auto;font-size:16.5px;font-weight:600}
+.psc{font-family:'Anton',sans-serif;font-size:17px;min-width:64px;text-align:right}
 .pbar{height:5px;background:rgba(240,238,233,.07);margin-top:16px;overflow:hidden}
 .pbar i{display:block;height:100%;width:0;transition:width 1s var(--ease)}
 .ev{margin-top:16px;font-size:14.5px;color:#A19D95;line-height:1.62;border-left:2px solid var(--hair-2);padding-left:16px;max-width:78ch}
@@ -402,7 +390,7 @@ body::before{
 /* ==========================================================================
    ATHLETE PROFILE
    ========================================================================== */
-.ap-nav{background:rgba(13,15,17,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:100}
+.ap-nav{background:rgba(13,15,17,.94);backdrop-filter:blur(18px);border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:100}
 .ap-nav .nav-in{height:70px}
 .ap-mark{font-family:'Anton',sans-serif;font-size:19px;text-transform:uppercase;letter-spacing:.01em;transition:color .3s}
 .ap-crumb{display:flex;align-items:baseline;gap:12px;min-width:0}
@@ -471,7 +459,7 @@ body::before{
 }
 .item .meta{padding:18px 20px 20px;border-top:1px solid var(--hair)}
 .item .meta b{display:block;font-size:14.5px;font-weight:600;line-height:1.4}
-.item .meta span{display:block;color:var(--lime);font-size:15px;margin-top:9px;font-family:'Anton',sans-serif;letter-spacing:.01em}
+.item .meta span{display:block;color:var(--lime);font-size:15px;margin-top:9px;font-family:'Anton',sans-serif}
 
 .signup{border:1px solid var(--hair);background:var(--ink-1);padding:clamp(26px,3.2vw,42px)}
 .ok{color:var(--mint);font-size:14px;margin-top:16px}
@@ -479,7 +467,7 @@ body::before{
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:880px){
   .nav-links{display:none}
-  .hero-in{padding-block:88px 56px}
+  .hero-in{padding-block:80px 52px}
 }
 @media (max-width:520px){
   .hero{min-height:auto}
