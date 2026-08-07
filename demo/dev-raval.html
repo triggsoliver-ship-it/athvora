@@ -5,204 +5,235 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dev Raval — All-rounder, Larkfield CCC &amp; The Hundred</title>
 <meta name="description" content="Dev Raval, All-rounder for Larkfield CCC &amp; The Hundred. Career record, media kit, shop and enquiries.">
+<meta name="theme-color" content="#08090A">
 <meta property="og:title" content="Dev Raval — All-rounder, Larkfield CCC &amp; The Hundred">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/img.css">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 
-<div class="demobar">Demo athlete site built by Ascendr. Dev Raval is fictional — the structure is not. <a href="index.html">Back to all three</a></div>
+<div class="demobar">Demo athlete site built by Ascendr · Dev Raval is fictional — the structure is not · <a href="index.html">back to all three</a></div>
 
-<nav class="ap-nav">
+<nav class="nav ap-nav">
   <div class="wrap nav-in">
-    <a class="ap-name" href="#top">Dev Raval</a>
+    <div class="ap-crumb">
+      <a class="mark sm" href="../index.html">ASCEND<i>R</i></a>
+      <span class="slash">/</span>
+      <a class="ap-mark" href="#top">Dev Raval</a>
+    </div>
     <div class="nav-links">
+      <a href="index.html">All athletes</a>
       <a href="#record">Record</a>
-      <a href="#story">Story</a>
       <a href="#kit">Media kit</a>
       <a href="#shop">Shop</a>
-      <a href="#list">Newsletter</a>
+      <a href="../pricing.html">Pricing</a>
     </div>
     <a class="nav-cta" href="#enquiries">Brand enquiries</a>
   </div>
 </nav>
+<div class="ap-sub">
+  <div class="wrap ap-sub-in">
+    <a href="../index.html" class="tl">&larr; Ascendr home</a>
+    <a href="index.html" class="tl">All three athletes</a>
+    <a href="../check.html" class="tl">Brand Check</a>
+    <a href="../pricing.html" class="tl">Pricing</a>
+  </div>
+</div>
 
 <header class="ap-hero" id="top">
-  <div class="wrap">
-    <p class="ap-pos">All-rounder · Cricket</p>
-    <h1>Dev Raval</h1>
-    <p class="ap-club">Larkfield CCC &amp; The Hundred · 22 · England Lions</p>
-    <div class="ap-actions">
-      <a class="btn" href="#list">Join the list</a>
-      <a class="btn-ghost" href="#kit">Download media kit</a>
-      <a class="btn-ghost" href="#enquiries">Brand enquiries</a>
+  <div class="wrap ap-hero-in">
+    <div class="ap-copy">
+      <p class="ap-pos">All-rounder · Cricket</p>
+      <h1 data-lines>
+        <span class="mline"><span>Dev</span></span>
+        <span class="mline"><span>Raval</span></span>
+      </h1>
+      <p class="ap-club" data-rv="0.35">Larkfield CCC <span style="color:var(--mute-2)">&amp; The Hundred</span> · 22 · England Lions</p>
+      <div class="ap-act" data-rv="0.45">
+        <a class="btn" href="#list"><span>Join the list</span><span class="arw">→</span></a>
+        <a class="ghost" href="#kit"><span>Media kit</span></a>
+        <a class="ghost" href="#enquiries"><span>Brand enquiries</span></a>
+      </div>
     </div>
-    <div class="stats">
-      <div class="stat"><b>1,842</b><span>First-class runs</span></div>
-      <div class="stat"><b>96</b><span>Wickets</span></div>
-      <div class="stat"><b>148.2</b><span>T20 strike rate</span></div>
-      <div class="stat"><b>44.1k</b><span>Followers, all platforms</span></div>
-      <div class="stat"><b>1,930</b><span>On the email list</span></div>
-    </div>
-    <p class="tiny" style="margin-top:16px">Playing numbers pull from the county feed after every match.</p>
+    <div class="ap-shot" style="background-image:var(--img-dev)"></div>
   </div>
 </header>
 
-<section id="record">
+<div class="stats">
+  <div class="st"><b data-count="1842">1,842</b><span>First-class runs</span></div>
+  <div class="st"><b data-count="96">96</b><span>Wickets</span></div>
+  <div class="st"><b data-count="148.2">148.2</b><span>T20 strike rate</span></div>
+  <div class="st"><b data-count="44.1" data-suffix="k">44.1k</b><span>Followers, all platforms</span></div>
+  <div class="st"><b data-count="1930">1,930</b><span>On the email list</span></div>
+</div>
+<div class="wrap"><p class="tiny" style="padding-top:16px">Playing numbers pull from the county feed after every match.</p></div>
+
+<section class="sec" id="record">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:36px">
-      <p class="eyebrow">Career record</p>
-      <h2>Three formats, two seasons, and six months a year with nothing on</h2>
+    <div class="shead" style="margin-bottom:clamp(32px,3.5vw,48px)">
+      <p class="eyebrow" data-rv>Career record</p>
+      <h2 data-rv="0.06">Three formats, two seasons,<br>and six months a year with nothing on</h2>
     </div>
-    <table class="cmp">
-      <thead><tr><th>Season</th><th>Format</th><th>Matches</th><th>Runs</th><th>Wickets</th><th>Best</th></tr></thead>
-      <tbody>
-        <tr><td>2026</td><td>County Championship</td><td>11</td><td>612</td><td>29</td><td>114 / 5-41</td></tr>
-        <tr><td>2026</td><td>The Hundred</td><td>8</td><td>171</td><td>9</td><td>48* / 3-22</td></tr>
-        <tr><td>2025</td><td>County Championship</td><td>13</td><td>704</td><td>34</td><td>131 / 6-58</td></tr>
-        <tr><td>2025</td><td>T20 Blast</td><td>12</td><td>288</td><td>14</td><td>61 / 3-19</td></tr>
-        <tr><td>2024</td><td>County Championship</td><td>9</td><td>526</td><td>33</td><td>98 / 5-29</td></tr>
-      </tbody>
-    </table>
-    <p class="tiny" style="margin-top:16px">Updated automatically from the fixture feed. Nobody has to remember to do it.</p>
+    <div data-rv style="overflow-x:auto">
+      <table class="tbl">
+        <thead><tr><th>Season</th><th>Format</th><th>Matches</th><th>Runs</th><th>Wickets</th><th>Best</th></tr></thead>
+        <tbody>
+          <tr><td>2026</td><td>County Championship</td><td>11</td><td>612</td><td>29</td><td>114 / 5-41</td></tr>
+          <tr><td>2026</td><td>The Hundred</td><td>8</td><td>171</td><td>9</td><td>48* / 3-22</td></tr>
+          <tr><td>2025</td><td>County Championship</td><td>13</td><td>704</td><td>34</td><td>131 / 6-58</td></tr>
+          <tr><td>2025</td><td>T20 Blast</td><td>12</td><td>288</td><td>14</td><td>61 / 3-19</td></tr>
+          <tr><td>2024</td><td>County Championship</td><td>9</td><td>526</td><td>33</td><td>98 / 5-29</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tiny" data-rv style="margin-top:18px">Updated automatically from the fixture feed. Nobody has to remember to do it.</p>
   </div>
 </section>
 
-<section id="story">
+<section class="sec" id="story">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:32px">
-      <p class="eyebrow">The story</p>
-      <h2>The off-season is the cheapest attention I will ever get</h2>
+    <div class="shead" style="margin-bottom:clamp(30px,3.4vw,44px)">
+      <p class="eyebrow" data-rv>In Dev's words</p>
+      <h2 data-rv="0.06">The off-season is the cheapest<br>attention I will ever get</h2>
     </div>
-    <div class="prose">
+    <div class="prose" data-rv="0.1">
       <p>Cricket has a strange shape to it. Six months where you are on television most weeks, and six months where you may as well not exist. Everyone in the game accepts that, and it makes no sense at all.</p>
       <p>The winter is when people actually have time to read something, buy something or book something. It is when the juniors are indoors looking for coaching. It is when brands plan next year's budgets. And it is the exact half of the year most players go quiet.</p>
       <p>So the content on this site keeps going through the winter, the coaching camps run in February, and the list gets a note every fortnight whether or not I have played. That was the single change that made the biggest difference.</p>
       <p>I am twenty-two. If this goes well I have fifteen years. If it doesn't, I have three. Building something I own either way seemed like the obvious call.</p>
     </div>
-    <p class="tiny" style="margin-top:22px">Written from a recorded interview, edited by a human, signed off by Dev. It sounds like Dev because it is Dev.</p>
+    <p class="tiny" data-rv style="margin-top:26px">Written from a recorded interview, edited by a human, signed off by Dev. It sounds like Dev because it is Dev.</p>
   </div>
 </section>
 
-<section id="kit">
+<section class="sec" id="kit">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:34px">
-      <p class="eyebrow">Media kit</p>
-      <h2>Everything a brand needs, without having to ask</h2>
-      <p>Live numbers, updated weekly. A marketing manager can price this in ten seconds rather than emailing to ask and waiting three days.</p>
+    <div class="shead">
+      <p class="eyebrow" data-rv>Media kit</p>
+      <h2 data-rv="0.06">Everything a brand needs,<br>without having to ask</h2>
+      <p class="lede" data-rv="0.12">Live numbers, updated weekly. A marketing manager can price this in ten seconds rather than emailing to ask and waiting three days.</p>
     </div>
-    <div class="kit">
+    <div class="kit" data-rv>
       <div><b>26.8k</b><span>Instagram</span></div>
       <div><b>11.4k</b><span>X</span></div>
       <div><b>5.9k</b><span>YouTube</span></div>
-      <div><b>4.6%</b><span>Avg. engagement rate</span></div>
-      <div><b>81%</b><span>Audience India + UK</span></div>
+      <div><b>4.6%</b><span>Avg. engagement</span></div>
+      <div><b>81%</b><span>India + UK</span></div>
       <div><b>66%</b><span>Audience 18–34</span></div>
     </div>
-    <div style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap">
-      <a class="btn" href="#enquiries">Download the full kit (PDF)</a>
-      <a class="btn-ghost" href="#enquiries">See the rate card</a>
+    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap" data-rv>
+      <a class="btn" href="#enquiries"><span>Download the full kit</span><span class="arw">↓</span></a>
+      <a class="ghost" href="#enquiries"><span>See the rate card</span></a>
     </div>
     <p class="tiny" style="margin-top:16px">Demo links. In a live build these are real files.</p>
-
-    <div class="sponsors">
-      <span class="tiny" style="width:100%;margin-bottom:4px">Current partners</span>
-      <span class="sp">LARKFIELD WILLOW</span>
-      <span class="sp">SIXTH STUMP APPAREL</span>
-      <span class="sp">MERIDIAN INSURANCE</span>
+    <div data-rv style="margin-top:clamp(36px,4vw,56px)">
+      <p class="eyebrow">Current partners</p>
+      <div class="sponsors">
+        <span class="sp">LARKFIELD WILLOW</span>
+        <span class="sp">SIXTH STUMP APPAREL</span>
+        <span class="sp">MERIDIAN INSURANCE</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="shop">
+<section class="sec" id="shop">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:34px">
-      <p class="eyebrow">Shop &amp; bookings</p>
-      <h2>Winter camps, a bat deal and a hoodie people actually wear</h2>
-      <p>Print-on-demand, so nothing exists until a fan has paid for it. No stock, no risk, a margin on every order — paid out monthly.</p>
+    <div class="shead">
+      <p class="eyebrow" data-rv>Shop &amp; bookings</p>
+      <h2 data-rv="0.06">Winter camps, a bat deal<br>and a hoodie people actually wear</h2>
+      <p class="lede" data-rv="0.12">Print-on-demand, so nothing exists until a fan has paid for it. No stock, no risk, a margin on every order — paid out monthly.</p>
     </div>
     <div class="shop">
-      <div class="item"><div class="ph">WINTER CAMP</div><div class="meta"><b>February all-rounder camp — 3 days</b><span>£210</span></div></div>
-      <div class="item"><div class="ph">SIGNED BAT</div><div class="meta"><b>Signed match bat, 2026 season</b><span>£240</span></div></div>
-      <div class="item"><div class="ph">HOODIE MOCKUP</div><div class="meta"><b>Off-Season hoodie, navy</b><span>£48</span></div></div>
-      <div class="item"><div class="ph">VIDEO ANALYSIS</div><div class="meta"><b>Send me your net footage — video breakdown</b><span>£45</span></div></div>
+      <div class="item" data-rv="0.00"><div class="ph-img">WINTER CAMP</div><div class="meta"><b>February all-rounder camp — 3 days</b><span>£210</span></div></div>
+      <div class="item" data-rv="0.05"><div class="ph-img">SIGNED BAT</div><div class="meta"><b>Signed match bat, 2026 season</b><span>£240</span></div></div>
+      <div class="item" data-rv="0.10"><div class="ph-img">HOODIE</div><div class="meta"><b>Off-Season hoodie, navy</b><span>£48</span></div></div>
+      <div class="item" data-rv="0.15"><div class="ph-img">VIDEO</div><div class="meta"><b>Send me your net footage — breakdown</b><span>£45</span></div></div>
     </div>
-    <p class="tiny" style="margin-top:20px">Demo store. Product images are placeholders; in a live build these are real mockups on real garments.</p>
+    <p class="tiny" data-rv style="margin-top:22px">Demo store. Product images are placeholders; in a live build these are real mockups on real garments.</p>
   </div>
 </section>
 
-<section id="list">
+<section class="sec" id="list">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:30px">
-      <p class="eyebrow">The list</p>
-      <h2>1,930 people who hear from me in January too</h2>
-      <p>A fortnightly note all year round — including the winter, when everyone else goes quiet and the inbox is empty. Camps and signed gear go to the list first.</p>
+    <div class="shead" style="margin-bottom:clamp(28px,3vw,40px)">
+      <p class="eyebrow" data-rv>The list</p>
+      <h2 data-rv="0.06">1,930 people who hear<br>from me in January too</h2>
+      <p class="lede" data-rv="0.12">A fortnightly note all year round — including the winter, when everyone else goes quiet and the inbox is empty. Camps and signed gear go to the list first.</p>
     </div>
-    <div class="signup">
-      <form onsubmit="event.preventDefault();this.querySelector('.note-ok').classList.remove('hidden');this.querySelector('input').value='';">
-        <div class="checkbox-form">
-          <div class="field"><input type="email" required placeholder="you@email.com" aria-label="Email address"></div>
-          <button class="btn" type="submit">Join the list</button>
+    <div class="signup" data-rv>
+      <form onsubmit="event.preventDefault();this.querySelector('.ok').classList.remove('hidden');this.querySelector('input').value='';">
+        <div class="cform" style="margin-top:0">
+          <div class="fld"><input type="email" required placeholder="you@email.com" aria-label="Email address"></div>
+          <button class="btn" type="submit"><span>Join the list</span><span class="arw">→</span></button>
         </div>
-        <p class="tiny" style="margin-top:14px">Roughly one email a fortnight. Unsubscribe in one click. The list belongs to Dev and is never sold or rented.</p>
-        <p class="note-ok hidden">✓ That worked — in a live build you'd now be on the list. This is a demo, so nothing was stored.</p>
+        <p class="tiny" style="margin-top:16px">Roughly one email a fortnight. Unsubscribe in one click. The list belongs to Dev and is never sold or rented.</p>
+        <p class="ok hidden">✓ That worked — in a live build you'd now be on the list. This is a demo, so nothing was stored.</p>
       </form>
-      <div class="money" style="margin-top:28px">
-        <div><b>1,930</b><span>on the list, owned outright and exportable any day</span></div>
-        <div><b>44%</b><span>open rate — versus about 4% organic reach on social</span></div>
-        <div><b>£200</b><span>paid sponsor slot in every send</span></div>
+      <div class="cost" style="margin-top:30px">
+        <div><b data-count="1930">1,930</b><span>on the list, owned outright and exportable any day</span></div>
+        <div><b data-count="44" data-suffix="%">44%</b><span>open rate — versus about 4% organic reach on social</span></div>
+        <div><b data-count="200" data-prefix="£">£200</b><span>paid sponsor slot in every send</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="enquiries">
+<section class="sec" id="enquiries">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:30px">
-      <p class="eyebrow">Enquiries</p>
-      <h2>One inbox. Not a DM request folder.</h2>
-      <p>Brand partnerships, appearances, media and speaking. Answered within two working days by a person, with a rate card attached.</p>
+    <div class="shead" style="margin-bottom:clamp(28px,3vw,40px)">
+      <p class="eyebrow" data-rv>Enquiries</p>
+      <h2 data-rv="0.06">One inbox.<br>Not a DM request folder.</h2>
+      <p class="lede" data-rv="0.12">Brand partnerships, appearances, media and speaking. Answered within two working days by a person, with a rate card attached.</p>
     </div>
-    <div class="grid g2">
-      <div class="card">
-        <div class="card-n">COMMERCIAL &amp; BRAND</div>
-        <h3 style="font-size:19px">partnerships@devraval.com</h3>
-        <p>Sponsorship, ambassadorships, product collaborations and content campaigns. Rate card sent on request, no discovery call needed.</p>
+    <div class="mods">
+      <div class="mod" data-rv>
+        <div class="mod-n">01</div>
+        <h3 style="font-size:clamp(17px,1.6vw,21px);text-transform:none;letter-spacing:0">partnerships@devraval.com</h3>
+        <p class="mod-d">Sponsorship, ambassadorships, product collaborations and content campaigns. Rate card sent on request, no discovery call needed.</p>
+        <p class="mod-p">Commercial<span>&amp; brand</span></p>
       </div>
-      <div class="card">
-        <div class="card-n">MEDIA &amp; APPEARANCES</div>
-        <h3 style="font-size:19px">bookings@devraval.com</h3>
-        <p>Interviews, podcasts, club dinners, junior camps and coaching clinics. Availability held against the fixture calendar so nothing gets double-booked.</p>
+      <div class="mod" data-rv="0.06">
+        <div class="mod-n">02</div>
+        <h3 style="font-size:clamp(17px,1.6vw,21px);text-transform:none;letter-spacing:0">bookings@devraval.com</h3>
+        <p class="mod-d">Interviews, podcasts, club dinners, junior camps and coaching clinics. Availability held against the fixture calendar so nothing gets double-booked.</p>
+        <p class="mod-p">Media<span>&amp; appearances</span></p>
       </div>
     </div>
-    <p class="tiny" style="margin-top:20px">Playing and franchise contracts are handled by Dev's agent, not by Ascendr. We stay on the brand and sponsorship side of the line.</p>
+    <p class="tiny" data-rv style="margin-top:22px;max-width:76ch">Playing and franchise contracts are handled by Dev's agent, not by Ascendr. We stay on the brand and sponsorship side of the line.</p>
   </div>
 </section>
 
 <section class="cta">
   <div class="wrap">
-    <h2>This took three weeks to build</h2>
-    <p>Site, content engine, shop, list and media kit. £999 to set up, £399 a month to run, and every asset registered in the athlete's name.</p>
-    <a class="btn" href="../pricing.html">See the pricing →</a>
-    <small>Or run the free Brand Check first and find out where you'd score.</small>
+    <h2 data-rv>This took three weeks to build</h2>
+    <p data-rv="0.06">Site, content engine, shop, list and media kit. £999 to set up, £399 a month to run, and every asset registered in the athlete's name.</p>
+    <a class="btn" href="../pricing.html" data-rv="0.12"><span>See the pricing</span><span class="arw">→</span></a>
+    <small data-rv="0.16">Or run the free Brand Check first and find out where you'd score.</small>
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot-in">
-    <div>
-      <div class="ap-name" style="display:block;margin-bottom:8px">Dev Raval</div>
-      <div class="tiny">Larkfield CCC &amp; The Hundred · All-rounder</div>
-      <div class="tiny" style="margin-top:10px">Fictional demo athlete. Site built by <a href="../index.html">Ascendr</a>.</div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="max-width:44ch">
+        <p class="eyebrow nb" style="margin-bottom:14px">Dev Raval</p>
+        <p style="font-size:17px">Larkfield CCC &amp; The Hundred · All-rounder</p>
+        <p class="tiny" style="margin-top:16px">Fictional demo athlete. Site built by <a href="../index.html" class="tl">Ascendr</a>. Domain, list and content owned by the athlete.</p>
+      </div>
+      <div class="foot-links">
+        <a href="index.html" class="tl">All demo profiles</a>
+        <a href="../pricing.html" class="tl">Pricing</a>
+        <a href="../check.html" class="tl">Brand Check</a>
+      </div>
     </div>
-    <div style="text-align:right">
-      <div><a href="index.html">All demo profiles</a> · <a href="../pricing.html">Pricing</a> · <a href="../check.html">Brand Check</a></div>
-      <div class="tiny" style="margin-top:8px">Domain, list and content owned by the athlete.</div>
-    </div>
+    <div class="foot-mark">RAVAL</div>
   </div>
 </footer>
 
+<script src="../assets/app.js"></script>
 </body>
 </html>
