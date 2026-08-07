@@ -3,15 +3,14 @@
    Dark editorial / cinematic sports campaign.
    Type: Anton (display) · Archivo (UI + body) · Instrument Serif (editorial)
 
-   Three rules learned the hard way:
+   Four rules learned the hard way on this build:
    1. CSS never hides or clips content. Reveal states are scoped behind .rv-on,
-      which app.js adds only once it is actually running; the headline mask
-      (overflow + a looser line-height) is applied inline by app.js and removed
-      when the animation finishes.
-   2. Anything carrying .wrap must use padding-block, never the `padding`
-      shorthand, or it wipes out the horizontal gutter.
-   3. overflow-x:hidden belongs on <html> as well as <body>, or the scrolling box
-      moves off the root element.
+      which app.js adds only once it is running.
+   2. No overflow masks on type — a tight line-height clips Anton's ascenders.
+   3. Anything carrying .wrap uses padding-block, never the `padding` shorthand,
+      or it wipes out the horizontal gutter.
+   4. The film grain is STATIC. Animating a fixed, full-viewport, blend-mode
+      layer corrupted paint (headlines rendered as stale, half-drawn frames).
    ========================================================================== */
 
 :root{
@@ -63,18 +62,12 @@ img{display:block;max-width:100%}
 
 .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
 
-/* ---------- FILM GRAIN ---------- */
+/* ---------- FILM GRAIN (static — see rule 4 above) ---------- */
 body::before{
-  content:"";position:fixed;inset:-50%;z-index:9998;pointer-events:none;
+  content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-  opacity:.048;mix-blend-mode:overlay;
-  animation:grain 6s steps(6) infinite;
+  opacity:.05;mix-blend-mode:overlay;
 }
-@keyframes grain{
-  0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}
-  60%{transform:translate(-2%,-2%)}80%{transform:translate(3%,1%)}100%{transform:translate(0,0)}
-}
-@media (prefers-reduced-motion:reduce){body::before{animation:none}}
 
 /* ---------- TYPE ---------- */
 h1,h2,h3{
@@ -154,15 +147,13 @@ h3{font-size:var(--t-h3)}
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:min(84vh,860px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:0;z-index:-2;background-image:var(--img-hero);background-size:cover;background-position:center 38%;
-  filter:contrast(1.14) saturate(.72) brightness(.82);
-  animation:kb 26s ease-out forwards;
+  filter:contrast(1.2) saturate(.6) brightness(.55);
 }
-@keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
-@media (prefers-reduced-motion:reduce){.hero-bg{animation:none;transform:scale(1)}}
 .hero-scrim{position:absolute;inset:0;z-index:-1;
   background:
-    radial-gradient(120% 90% at 78% 20%, rgba(216,255,62,.10), transparent 56%),
-    linear-gradient(to top, var(--ink) 2%, rgba(8,9,10,.94) 34%, rgba(8,9,10,.66) 68%, rgba(8,9,10,.76) 100%);
+    linear-gradient(97deg, rgba(8,9,10,.97) 0%, rgba(8,9,10,.92) 30%, rgba(8,9,10,.55) 58%, rgba(8,9,10,.30) 80%, rgba(8,9,10,.55) 100%),
+    linear-gradient(to top, #08090A 1%, rgba(8,9,10,.90) 24%, rgba(8,9,10,.52) 62%, rgba(8,9,10,.72) 100%),
+    radial-gradient(110% 80% at 82% 18%, rgba(216,255,62,.12), transparent 55%);
 }
 .hero-in{position:relative;width:100%;
   padding-left:var(--gut);padding-right:var(--gut);
@@ -179,12 +170,9 @@ h3{font-size:var(--t-h3)}
   color:var(--paper);border:1px solid var(--hair-2);padding:9px 16px;border-radius:100px;
   background:rgba(8,9,10,.4);backdrop-filter:blur(8px);margin-bottom:28px;font-weight:500;
 }
-.dot{width:6px;height:6px;border-radius:50%;background:var(--lime);animation:ping 2.4s infinite}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(216,255,62,.55)}70%{box-shadow:0 0 0 9px rgba(216,255,62,0)}100%{box-shadow:0 0 0 0 rgba(216,255,62,0)}}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--lime)}
 
-/* Headline lines. NO overflow here — a tight line-height plus overflow:hidden
-   clips Anton's ascenders. app.js applies both inline for the reveal, then
-   removes them, so the text is never clipped whether JS runs or not. */
+/* Headline lines. No overflow, no mask — app.js fades and lifts each line. */
 .mline{display:block}
 .mline>span{display:block}
 
@@ -222,7 +210,7 @@ h3{font-size:var(--t-h3)}
 .stmt-body strong{color:var(--ink);font-weight:600}
 .rule-num{display:flex;gap:clamp(24px,5vw,80px);flex-wrap:wrap;margin-top:clamp(40px,5vw,70px);padding-top:34px;border-top:1px solid rgba(8,9,10,.16)}
 .rule-num div{min-width:150px}
-.rule-num b{font-family:'Anton',sans-serif;font-size:clamp(38px,4.6vw,64px);line-height:1;display:block;letter-spacing:-.02em}
+.rule-num b{font-family:'Anton',sans-serif;font-size:clamp(38px,4.6vw,64px);line-height:1.04;display:block;letter-spacing:-.02em}
 .rule-num span{display:block;margin-top:10px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mute-2);max-width:22ch}
 
 /* ---------- ATHLETE CARDS ---------- */
