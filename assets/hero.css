@@ -1,0 +1,26 @@
+/* Hero exposure and scrim.
+
+   Loaded after style.css. The tunnel photograph has bright fog exactly where the
+   headline sits, so white type disappeared into it. This darkens the plate and
+   lays a diagonal scrim: near-opaque under the text column on the left, much
+   lighter on the right so the silhouette still reads. */
+
+.hero-bg{
+  filter:contrast(1.2) saturate(.6) brightness(.55);
+}
+
+.hero-scrim{
+  background:
+    linear-gradient(97deg,
+      rgba(8,9,10,.97) 0%,
+      rgba(8,9,10,.92) 30%,
+      rgba(8,9,10,.55) 58%,
+      rgba(8,9,10,.30) 80%,
+      rgba(8,9,10,.55) 100%),
+    linear-gradient(to top,
+      #08090A 1%,
+      rgba(8,9,10,.90) 24%,
+      rgba(8,9,10,.52) 62%,
+      rgba(8,9,10,.72) 100%),
+    radial-gradient(110% 80% at 82% 18%, rgba(216,255,62,.12), transparent 55%);
+}
