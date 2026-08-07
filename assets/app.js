@@ -1,11 +1,13 @@
 /* Ascendr — motion layer.
 
-   Rules learned the hard way:
-   1. CSS never hides content. Reveals start from the visible state and are set
-      up here, so if this file fails the page still reads perfectly.
-   2. The masked-line reveal needs overflow:hidden on the line box, but a tight
-      line-height clips Anton's ascenders. So this file owns BOTH the overflow
-      and a temporary looser line-height, and clears them when it's done. */
+   Rules learned the hard way on this build:
+   1. CSS never hides content. Every reveal starts from the visible state and is
+      set up here, so if this file fails the page still reads perfectly.
+   2. No overflow-clipping masks on type. A tight line-height plus overflow:hidden
+      clips Anton's ascenders, and tearing the mask down again left stale
+      composited layers in Chrome. The headline now uses the same opacity/rise
+      as everything else — less clever, always correct.
+   3. No will-change. It bought nothing here and caused the stale layers. */
 (function () {
   'use strict';
 
@@ -13,46 +15,31 @@
   var canObserve = 'IntersectionObserver' in window;
   var animate = !reduce && canObserve;
 
-  /* ---- masked line reveal ---- */
+  var EASE = 'cubic-bezier(.16,1,.3,1)';
+
+  /* ---- headline: staggered rise, line by line ---- */
   function lines() {
     var groups = [].slice.call(document.querySelectorAll('[data-lines]'));
     if (!groups.length || !animate) return;
 
     groups.forEach(function (g) {
-      var masks = [].slice.call(g.querySelectorAll('.mline'));
-      if (!masks.length) return;
+      var ls = [].slice.call(g.querySelectorAll('.mline'));
+      if (!ls.length) return;
 
-      masks.forEach(function (m) {
-        m.style.lineHeight = '1.06';
-        m.style.overflow = 'hidden';
-        var inner = m.firstElementChild;
-        if (!inner) return;
-        inner.style.display = 'block';
-        inner.style.transform = 'translateY(105%)';
-        inner.style.willChange = 'transform';
+      ls.forEach(function (l) {
+        l.style.opacity = '0';
+        l.style.transform = 'translateY(22px)';
       });
 
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
-          masks.forEach(function (m, i) {
-            var inner = m.firstElementChild;
-            if (!inner) return;
-            inner.style.transition = 'transform 1.05s cubic-bezier(.16,1,.3,1) ' + (i * 0.09) + 's';
-            inner.style.transform = 'translateY(0)';
+          ls.forEach(function (l, i) {
+            l.style.transition = 'opacity .8s ' + EASE + ' ' + (i * 0.1) + 's, transform .9s ' + EASE + ' ' + (i * 0.1) + 's';
+            // land on explicit final values and leave them there, so nothing
+            // is removed later and no stale layer can survive
+            l.style.opacity = '1';
+            l.style.transform = 'translateY(0)';
           });
-
-          // clear everything afterwards so nothing is left clipped or transformed
-          setTimeout(function () {
-            masks.forEach(function (m) {
-              m.style.overflow = '';
-              m.style.lineHeight = '';
-              var inner = m.firstElementChild;
-              if (!inner) return;
-              inner.style.transition = '';
-              inner.style.transform = '';
-              inner.style.willChange = '';
-            });
-          }, 1500 + masks.length * 90);
         });
       });
     });
@@ -86,7 +73,7 @@
   /* ---- count-up numbers ---- */
   function counters() {
     var els = [].slice.call(document.querySelectorAll('[data-count]'));
-    if (!els.length || !animate) return;   // markup holds the final figure already
+    if (!els.length || !animate) return;   // markup already holds the final figure
 
     function fmt(v, dec, suffix, prefix) {
       var s = dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-GB');
