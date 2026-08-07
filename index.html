@@ -4,26 +4,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ascendr — build your audience, own your brand</title>
-<meta name="description" content="A complete digital brand operation for professional athletes. Flat monthly fee, never a percentage. Everything we build is registered in your name.">
+<meta name="description" content="A complete digital brand operation for professional athletes. Flat monthly fee, never a percentage. Every asset registered in your name.">
+<meta name="theme-color" content="#08090A">
 <meta property="og:title" content="Ascendr — build your audience, own your brand">
 <meta property="og:description" content="A complete digital brand operation for professional athletes. Flat fee, never a percentage.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/img.css">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<div class="demobar">Concept demo — fictional athletes, indicative pricing, nothing here is live yet. <a href="check.html">Try the Brand Check</a>, it works.</div>
+<div class="demobar">Concept demo · fictional athletes, indicative pricing · <a href="check.html">the Brand Check works — try it</a></div>
 
-<nav>
+<nav class="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="index.html">Ascend<span>r</span></a>
+    <a class="mark" href="index.html">ASCEND<i>R</i></a>
     <div class="nav-links">
       <a href="#truth">Why</a>
+      <a href="demo/index.html">Athletes</a>
       <a href="#what">What we do</a>
       <a href="pricing.html">Pricing</a>
-      <a href="demo/index.html">See real profiles</a>
       <a href="check.html">Brand Check</a>
     </div>
     <a class="nav-cta" href="check.html">Check my brand</a>
@@ -31,173 +33,204 @@
 </nav>
 
 <header class="hero">
-  <div class="wrap">
-    <div class="hero-tag"><span class="dot live"></span> Free brand check · no signup · about a minute</div>
-    <h1>Build your audience. <em>Own</em> your brand.</h1>
-    <p class="hero-sub">
-      A complete digital brand operation for professional athletes — your own site, your own content engine,
-      your own shop, your own fanbase. One flat monthly fee. We never take a percentage of a single thing you earn.
+  <div class="hero-bg"></div>
+  <div class="hero-scrim"></div>
+  <div class="wrap hero-in">
+    <span class="pill"><span class="dot"></span> Free brand check · no signup · one minute</span>
+    <h1 data-lines>
+      <span class="mline"><span>Build your</span></span>
+      <span class="mline"><span>audience.</span></span>
+      <span class="mline"><span><em class="lime" style="font-style:normal">Own</em> your brand.</span></span>
+    </h1>
+    <p class="lede" data-rv="0.5">
+      A complete digital brand operation for professional athletes — your own site, your own
+      content engine, your own shop, your own fanbase. One flat monthly fee, and we never take
+      a percentage of a single thing you earn.
     </p>
-    <div class="hero-btns">
-      <a class="btn" href="check.html">Check my brand free →</a>
-      <a class="btn-ghost" href="demo/index.html">See three athlete profiles</a>
+    <div class="hero-cta" data-rv="0.65">
+      <a class="btn" href="check.html"><span>Check my brand free</span><span class="arw">→</span></a>
+      <a class="ghost" href="demo/index.html"><span>See three athletes</span><span class="arw">→</span></a>
     </div>
-    <p class="hero-note">Football · Rugby · Cricket · Netball · Boxing · Athletics · Anyone with a name worth something.</p>
+    <div class="hero-foot" data-rv="0.8">
+      <p>Football</p><p>Rugby</p><p>Cricket</p><p>Netball</p><p>Boxing</p><p>Athletics</p>
+    </div>
   </div>
 </header>
 
-<div class="strip">
-  <div class="strip-in">
-    <span><b>Flat fee</b> — never a percentage</span><span>·</span>
-    <span>Your <b>domain</b>, in your name</span><span>·</span>
-    <span>Your <b>fan list</b>, exportable forever</span><span>·</span>
-    <span>Cancel with <b>a month's notice</b></span><span>·</span>
-    <span>Nothing posted <b>without your approval</b></span><span>·</span>
-    <span><b>Flat fee</b> — never a percentage</span><span>·</span>
-    <span>Your <b>domain</b>, in your name</span><span>·</span>
-    <span>Your <b>fan list</b>, exportable forever</span><span>·</span>
-    <span>Cancel with <b>a month's notice</b></span><span>·</span>
-    <span>Nothing posted <b>without your approval</b></span><span>·</span>
+<div class="mq">
+  <div class="mq-in">
+    <span><b>Flat fee</b> — never a percentage</span><em>/</em>
+    <span>Your <b>domain</b>, in your name</span><em>/</em>
+    <span>Your <b>fan list</b>, exportable forever</span><em>/</em>
+    <span>Cancel with <b>a month's notice</b></span><em>/</em>
+    <span>Nothing posted <b>without your approval</b></span><em>/</em>
+    <span><b>Flat fee</b> — never a percentage</span><em>/</em>
+    <span>Your <b>domain</b>, in your name</span><em>/</em>
+    <span>Your <b>fan list</b>, exportable forever</span><em>/</em>
+    <span>Cancel with <b>a month's notice</b></span><em>/</em>
+    <span>Nothing posted <b>without your approval</b></span><em>/</em>
   </div>
 </div>
 
-<section class="light" id="truth">
+<section class="band-light stmt" id="truth">
   <div class="wrap">
-    <p class="eyebrow">The uncomfortable maths</p>
-    <h2 class="truth-quote">You get about eight years of everyone knowing your name. Then you get <b>fifty years</b> of the rest of your life.</h2>
-    <div class="truth-body">
+    <p class="eyebrow" data-rv>The uncomfortable maths</p>
+    <h2 class="stmt-q" data-rv="0.08" style="margin-top:26px">
+      You get about eight years of everyone knowing your name. Then you get
+      <span class="ser ember">fifty years</span> of the rest of your life.
+    </h2>
+    <div class="stmt-body" data-rv="0.16">
       <p>Every athlete knows this. Almost nobody acts on it — because acting on it means doing marketing, and marketing feels like either vanity or a second job you didn't sign up for.</p>
-      <p>So the advice everyone gets is "post more." But followers are rented. The algorithm is the landlord, and it can put your rent up or evict you without telling you. The day you stop performing, the reach goes, and you have nothing left to show for eight years of attention.</p>
+      <p>So the advice everyone gets is <em>post more</em>. But followers are rented. The algorithm is the landlord, and it can put your rent up or evict you without telling you. The day you stop performing, the reach goes, and there is nothing left to show for eight years of attention.</p>
       <p><strong>Ascendr turns rented attention into things you actually own.</strong> A domain. An email list. A product line. A customer base. Assets that survive a transfer, an injury and a retirement — and are still yours at thirty-four, when the football stops.</p>
     </div>
+    <div class="rule-num" data-rv="0.24">
+      <div><b data-count="8" data-suffix=" yrs">8 yrs</b><span>average professional career</span></div>
+      <div><b data-count="0" data-prefix="£">£0</b><span>of your earnings we take</span></div>
+      <div><b data-count="100" data-suffix="%">100%</b><span>of the assets in your name</span></div>
+      <div><b data-count="15" data-suffix=" min">15 min</b><span>of your week, once it's running</span></div>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="sec" id="roster">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Show, don't tell</p>
-      <h2>This is what your name could look like on Monday morning</h2>
-      <p>Three athletes, three sports, three fully built and browsable profiles. Click into the stats, open the shop, download the media kit. Nothing here is a flat mockup.</p>
+    <div class="shead">
+      <p class="eyebrow" data-rv>Show, don't tell</p>
+      <h2 data-rv="0.06">This is what your name<br>looks like on Monday morning</h2>
+      <p class="lede" data-rv="0.12">Three athletes, three sports, three fully built and browsable profiles. Click into the record, open the shop, read the media kit. Nothing here is a flat mockup.</p>
     </div>
-    <div class="grid g3">
-      <a class="card" href="demo/jordan-oyelowo.html" style="text-decoration:none">
-        <div class="card-n">FOOTBALL · CHAMPIONSHIP</div>
-        <h3>Jordan Oyelowo</h3>
-        <p>Left winger, 24. 61k followers, no email list, no shop, no media kit. The most common profile in British professional sport.</p>
-        <div class="price">Open the profile →</div>
+    <div class="roster">
+      <a class="ath" href="demo/jordan-oyelowo.html" data-rv="0.05">
+        <div class="ath-img j"></div>
+        <div class="ath-txt">
+          <p class="ath-tag">Football · Championship</p>
+          <h3>Jordan<br>Oyelowo</h3>
+          <p>Left winger, 24. Arrived with 61k followers, no email list, no shop and no media kit — the most common profile in British professional sport.</p>
+          <span class="ath-go">Open the profile <span class="arw">→</span></span>
+        </div>
       </a>
-      <a class="card" href="demo/maisie-clarke.html" style="text-decoration:none">
-        <div class="card-n">RUGBY · PREMIERSHIP WOMEN'S</div>
-        <h3>Maisie Clarke</h3>
-        <p>Flanker, 27. Coaching business on the side, and until now no proper front door to send anyone to.</p>
-        <div class="price">Open the profile →</div>
+      <a class="ath" href="demo/maisie-clarke.html" data-rv="0.14">
+        <div class="ath-img m"></div>
+        <div class="ath-txt">
+          <p class="ath-tag">Rugby · Premiership Women's</p>
+          <h3>Maisie<br>Clarke</h3>
+          <p>Flanker, 27. Already coaching on the side, and until now no proper front door to send anyone who wanted to book her.</p>
+          <span class="ath-go">Open the profile <span class="arw">→</span></span>
+        </div>
       </a>
-      <a class="card" href="demo/dev-raval.html" style="text-decoration:none">
-        <div class="card-n">CRICKET · COUNTY &amp; THE HUNDRED</div>
-        <h3>Dev Raval</h3>
-        <p>All-rounder, 22. Six months of the year with no fixtures — and the cheapest attention he'll ever get going unused.</p>
-        <div class="price">Open the profile →</div>
+      <a class="ath" href="demo/dev-raval.html" data-rv="0.23">
+        <div class="ath-img d"></div>
+        <div class="ath-txt">
+          <p class="ath-tag">Cricket · County &amp; The Hundred</p>
+          <h3>Dev<br>Raval</h3>
+          <p>All-rounder, 22. Six months a year without a fixture — the cheapest attention he'll ever get, going completely unused.</p>
+          <span class="ath-go">Open the profile <span class="arw">→</span></span>
+        </div>
       </a>
     </div>
-    <p class="tiny" style="margin-top:22px">All three are fictional. Any resemblance to a player you know is because the problem is this common.</p>
+    <p class="tiny" data-rv style="margin-top:24px">All three are fictional. Any resemblance to a player you know is because the problem is this common.</p>
   </div>
 </section>
 
-<section id="what">
+<section class="sec" id="what">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">What's included</p>
-      <h2>Five parts. Take one, take all five.</h2>
-      <p>Most athletes have an agent for contracts and nobody at all for everything else. Drop any module with a month's notice — the domain and the fan list belong to you either way.</p>
+    <div class="shead">
+      <p class="eyebrow" data-rv>What's included</p>
+      <h2 data-rv="0.06">Five parts.<br>Take one, take all five.</h2>
+      <p class="lede" data-rv="0.12">Most athletes have an agent for contracts and nobody at all for everything else. Drop any module with a month's notice — the domain and the fan list belong to you either way.</p>
     </div>
 
-    <div class="grid g3">
-      <div class="card">
-        <div class="card-n">01</div>
+    <div class="mods">
+      <div class="mod" data-rv>
+        <div class="mod-n">01</div>
         <h3>Identity</h3>
-        <p>Your own domain. Career record, your story, gallery, press page, and a live media kit a brand can download — plus one enquiries inbox that isn't a DM request folder. This is the thing you send a sponsor.</p>
-        <div class="price">£499 <span>+ £39/mo</span></div>
+        <p class="mod-d">Your own domain. Career record, your story, gallery, press page, and a live media kit a brand can download — plus one enquiries inbox that isn't a DM request folder. This is the thing you send a sponsor.</p>
+        <p class="mod-p">£499<span>then £39/mo</span></p>
       </div>
-      <div class="card">
-        <div class="card-n">02</div>
+      <div class="mod" data-rv="0.05">
+        <div class="mod-n">02</div>
         <h3>Content Engine</h3>
-        <p>We build a voice profile from how you actually talk, then draft a week of content from your real fixture list — captions, clips, graphics in your colours. Fifteen minutes a week from you: read, tweak, approve. Nothing goes out unapproved.</p>
-        <div class="price">£299 <span>+ £199/mo</span></div>
+        <p class="mod-d">We build a voice profile from how you actually talk, then draft a week of content from your real fixture list — captions, clips, graphics in your colours. Fifteen minutes a week from you: read, tweak, approve. <strong>Nothing goes out unapproved.</strong></p>
+        <p class="mod-p">£299<span>then £199/mo</span></p>
       </div>
-      <div class="card">
-        <div class="card-n">03</div>
+      <div class="mod" data-rv="0.1">
+        <div class="mod-n">03</div>
         <h3>Store</h3>
-        <p>Print-on-demand merch, signed items, digital products, and bookable appearances, clinics and 1-to-1s. Nothing is made until a fan has paid. No stock, no risk, a margin on every order.</p>
-        <div class="price">£249 <span>+ £29/mo</span></div>
+        <p class="mod-d">Print-on-demand merch, signed items, digital products, and bookable appearances, clinics and 1-to-1s. Nothing is made until a fan has paid. No stock, no risk, a margin on every order.</p>
+        <p class="mod-p">£249<span>then £29/mo</span></p>
       </div>
-      <div class="card">
-        <div class="card-n">04</div>
+      <div class="mod" data-rv="0.15">
+        <div class="mod-n">04</div>
         <h3>Fanbase</h3>
-        <p>An email and SMS list on your own domain that you own and can export any day you like — including the day you cancel. Followers are rented. A list is yours. This is the asset that compounds.</p>
-        <div class="price">£49<span>/mo</span></div>
+        <p class="mod-d">An email and SMS list on your own domain that you own and can export any day you like — including the day you cancel. Followers are rented. A list is yours. This is the asset that compounds.</p>
+        <p class="mod-p">—<span>£49/mo</span></p>
       </div>
-      <div class="card">
-        <div class="card-n">05</div>
+      <div class="mod" data-rv="0.2">
+        <div class="mod-n">05</div>
         <h3>Commercial</h3>
-        <p>A live media kit with real numbers, a published rate card, inbound enquiries handled properly, contracts and invoicing sorted. We do the packaging and the paperwork. <strong style="color:var(--accent)">You keep 100% of the fee.</strong></p>
-        <div class="price">£299 <span>+ £149/mo</span></div>
-      </div>
-      <div class="card feat">
-        <div class="card-n" style="color:var(--accent-2)">ALL FIVE · PRO</div>
-        <h3>Wired together</h3>
-        <p>The shop and the signup live on your site, the graphics match, the emails come from your fixture list, and the media kit updates itself. One invoice, one contact.</p>
-        <div class="price">£999 <span>+ £399/mo — saves £347 and £66 a month</span></div>
+        <p class="mod-d">A live media kit with real numbers, a published rate card, inbound enquiries handled properly, contracts and invoicing sorted. We do the packaging and the paperwork. <strong>You keep 100% of the fee.</strong></p>
+        <p class="mod-p">£299<span>then £149/mo</span></p>
       </div>
     </div>
-    <p style="margin-top:22px"><a href="pricing.html" style="color:var(--accent);text-decoration:none;font-weight:600">See all three tiers and every price →</a></p>
-  </div>
-</section>
 
-<section id="check">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Start here</p>
-      <h2>Six things that decide whether a brand ever calls you</h2>
-      <p>Enter a name or handle. We read the public footprint the way a sponsor's marketing manager would — and quote the evidence for every line. Free, no signup, nothing stored.</p>
-    </div>
-
-    <div class="checks">
-      <div class="check"><div class="check-n">01</div><div><h4>Do you exist?</h4><p>A searchable name and a domain you control — or just profiles on platforms that could change the rules tomorrow.</p></div></div>
-      <div class="check"><div class="check-n">02</div><div><h4>The media kit test</h4><p>Could a brand find your numbers, your contact and your rate in under two minutes? Most can't, so they move on.</p></div></div>
-      <div class="check"><div class="check-n">03</div><div><h4>Consistency</h4><p>Your posting rhythm — and whether it survives a bad run of form, an injury or a loan spell.</p></div></div>
-      <div class="check"><div class="check-n">04</div><div><h4>Engagement quality</h4><p>Real conversation versus hollow reach. Brands stopped buying follower counts a long time ago.</p></div></div>
-      <div class="check"><div class="check-n">05</div><div><h4>Owned audience</h4><p>Is there an email list with your name on it, or is every single follower rented from someone else?</p></div></div>
-      <div class="check"><div class="check-n">06</div><div><h4>Commercial doors</h4><p>A shop, a booking link, an enquiry route. The cheapest ways to earn from your name — or nothing at all.</p></div></div>
-    </div>
-
-    <div style="margin-top:52px;padding:34px;border:1px solid var(--line);background:var(--ink-2)">
-      <p class="blk" style="font-size:19px;margin-bottom:12px">If you're already doing it right, we'll tell you</p>
-      <p style="color:#A9A49B;max-width:64ch;font-size:16px">We wrote the check and we sell the fixes, so the check has to be worth trusting on its own. If your report comes back clean, it says there's nothing here for us to sell you. Dressing rooms talk, and honesty compounds faster than advertising.</p>
-      <a class="btn" href="check.html" style="margin-top:26px">Run a brand check →</a>
+    <div style="margin-top:40px;display:flex;gap:16px;flex-wrap:wrap;align-items:center" data-rv>
+      <a class="btn" href="pricing.html"><span>All five for £399/mo</span><span class="arw">→</span></a>
+      <p class="tiny" style="max-width:34ch">Separately that's £465 a month, so the bundle saves £347 up front and £66 every month.</p>
     </div>
   </div>
 </section>
 
-<section>
+<section class="sec">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">For unions, clubs and agents</p>
-      <h2>Every one of your members has a brand and no way to build it</h2>
-      <p>Ascendr works squad-wide and union-wide as a member benefit that generates income rather than costing money. We'll run a pilot for one season and publish the results — including the parts that didn't work.</p>
+    <div class="shead">
+      <p class="eyebrow" data-rv>Start here</p>
+      <h2 data-rv="0.06">Six things that decide<br>whether a brand ever calls</h2>
+      <p class="lede" data-rv="0.12">Enter a name or handle. We read the public footprint the way a sponsor's marketing manager would — and quote the evidence for every line. Free, no signup, nothing stored.</p>
     </div>
-    <div class="grid g3">
-      <div class="card">
-        <p class="blk" style="font-size:19px;margin-bottom:10px">Player unions</p>
-        <p>You already tell members to prepare for life after sport. This is the version of that advice that comes with someone actually doing the work. Member-benefit rates at 500+ members.</p>
+
+    <div class="six">
+      <div class="si" data-rv><b>01</b><h4>Do you exist?</h4><p>A searchable name and a domain you control — or just profiles on platforms that could change the rules tomorrow.</p></div>
+      <div class="si" data-rv="0.04"><b>02</b><h4>The media kit test</h4><p>Could a brand find your numbers, your contact and your rate in under two minutes? Most can't, so they move on.</p></div>
+      <div class="si" data-rv="0.08"><b>03</b><h4>Consistency</h4><p>Your posting rhythm — and whether it survives a bad run of form, an injury or a loan spell.</p></div>
+      <div class="si" data-rv="0.12"><b>04</b><h4>Engagement quality</h4><p>Real conversation versus hollow reach. Brands stopped buying follower counts a long time ago.</p></div>
+      <div class="si" data-rv="0.16"><b>05</b><h4>Owned audience</h4><p>Is there an email list with your name on it, or is every single follower rented from someone else?</p></div>
+      <div class="si" data-rv="0.2"><b>06</b><h4>Commercial doors</h4><p>A shop, a booking link, an enquiry route. The cheapest ways to earn from your name — or nothing at all.</p></div>
+    </div>
+
+    <div class="qbox" style="margin-top:clamp(44px,5vw,68px)" data-rv>
+      <h3>If you're already doing it right, we'll tell you</h3>
+      <p>We wrote the check and we sell the fixes, so the check has to be worth trusting on its own. If your report comes back clean, it says there's nothing here for us to sell you. Dressing rooms talk, and honesty compounds faster than advertising.</p>
+      <a class="btn" href="check.html" style="margin-top:28px"><span>Run a brand check</span><span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="shead">
+      <p class="eyebrow" data-rv>For unions, clubs and agents</p>
+      <h2 data-rv="0.06">Every one of your members has a brand and no way to build it</h2>
+      <p class="lede" data-rv="0.12">Ascendr works squad-wide and union-wide as a member benefit that generates income rather than costing money. We'll run a pilot for one season and publish the results — including the parts that didn't work.</p>
+    </div>
+    <div class="mods">
+      <div class="mod" data-rv>
+        <div class="mod-n">↳</div>
+        <h3>Player unions</h3>
+        <p class="mod-d">You already tell members to prepare for life after sport. This is the version of that advice that comes with someone actually doing the work.</p>
+        <p class="mod-p">From £15<span>per member/mo, 500+</span></p>
       </div>
-      <div class="card">
-        <p class="blk" style="font-size:19px;margin-bottom:10px">Clubs &amp; academies</p>
-        <p>£49 a head across a squad, out of the player care budget rather than a player's wages. Most valuable at the hardest moment: a released eighteen-year-old with thirty thousand followers and no plan.</p>
+      <div class="mod" data-rv="0.06">
+        <div class="mod-n">↳</div>
+        <h3>Clubs &amp; academies</h3>
+        <p class="mod-d">Out of the player care budget rather than a player's wages. Most valuable at the hardest moment: a released eighteen-year-old with thirty thousand followers and no plan.</p>
+        <p class="mod-p">£49<span>per head/mo, squad-wide</span></p>
       </div>
-      <div class="card">
-        <p class="blk" style="font-size:19px;margin-bottom:10px">Agents</p>
-        <p>White-label the whole thing under your own name. We take no percentage, so we're not competing for your fee — and we don't touch playing contracts or transfers, which is licensed work and yours.</p>
+      <div class="mod" data-rv="0.12">
+        <div class="mod-n">↳</div>
+        <h3>Agents</h3>
+        <p class="mod-d">White-label the whole thing under your own name. We take no percentage, so we're not competing for your fee — and we don't touch playing contracts or transfers, which is licensed work and yours.</p>
+        <p class="mod-p">White label<span>talk to us</span></p>
       </div>
     </div>
   </div>
@@ -205,26 +238,32 @@
 
 <section class="cta">
   <div class="wrap">
-    <h2>Your name is an asset. Start treating it like one.</h2>
-    <p>Run the free brand check first, not the invoice. Six scores, evidence quoted from your own pages, and a straight answer about whether there's anything worth fixing.</p>
-    <a class="btn" href="check.html">Check my brand free →</a>
-    <small>No signup. The report appears on screen and it's yours to keep, whether you ever speak to us again or not.</small>
+    <h2 data-rv>Your name is an asset. Start treating it like one.</h2>
+    <p data-rv="0.06">Run the free brand check first, not the invoice. Six scores, evidence quoted from your own pages, and a straight answer about whether there's anything worth fixing.</p>
+    <a class="btn" href="check.html" data-rv="0.12"><span>Check my brand free</span><span class="arw">→</span></a>
+    <small data-rv="0.16">No signup. The report appears on screen and it's yours to keep, whether you ever speak to us again or not.</small>
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot-in">
-    <div>
-      <div class="logo" style="font-size:18px;margin-bottom:8px">Ascend<span>r</span></div>
-      <div>Build your audience. Own your brand.</div>
-      <div class="tiny" style="margin-top:10px;max-width:44ch">Concept demo. Athletes are fictional, pricing is indicative, and the Brand Check generates illustrative scores rather than crawling live profiles.</div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="max-width:44ch">
+        <p class="eyebrow nb" style="margin-bottom:14px">Ascendr</p>
+        <p style="font-size:17px">Build your audience. Own your brand.</p>
+        <p class="tiny" style="margin-top:16px">Concept demo. Athletes are fictional, pricing is indicative, and the Brand Check generates illustrative scores rather than crawling live profiles.</p>
+      </div>
+      <div class="foot-links">
+        <a href="pricing.html" class="tl">Pricing</a>
+        <a href="demo/index.html" class="tl">Demo profiles</a>
+        <a href="check.html" class="tl">Brand Check</a>
+        <a href="https://scaleyourclub.com" class="tl">ScaleYourClub</a>
+      </div>
     </div>
-    <div style="text-align:right">
-      <div>From the team behind <a href="https://scaleyourclub.com">ScaleYourClub</a></div>
-      <div style="margin-top:6px"><a href="pricing.html">Pricing</a> · <a href="demo/index.html">Demo profiles</a> · <a href="check.html">Brand Check</a></div>
-    </div>
+    <div class="foot-mark">ASCEND<i>R</i></div>
   </div>
 </footer>
 
+<script src="assets/app.js"></script>
 </body>
 </html>

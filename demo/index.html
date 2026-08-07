@@ -3,97 +3,121 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Demo profiles — Ascendr</title>
+<title>The athletes — Ascendr</title>
+<meta name="description" content="Three athletes, three sports, three fully built profiles. Nothing here is a flat mockup.">
+<meta name="theme-color" content="#08090A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/img.css">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 
-<div class="demobar">All three athletes are fictional. Any resemblance to a player you know is because the problem is this common.</div>
+<div class="demobar">All three athletes are fictional · any resemblance to a player you know is because the problem is this common</div>
 
-<nav>
+<nav class="nav">
   <div class="wrap nav-in">
-    <a class="logo" href="../index.html">Ascend<span>r</span></a>
+    <a class="mark" href="../index.html">ASCEND<i>R</i></a>
     <div class="nav-links">
       <a href="../index.html">Home</a>
+      <a href="index.html" class="on">Athletes</a>
       <a href="../pricing.html">Pricing</a>
-      <a href="index.html" class="on">Demo profiles</a>
       <a href="../check.html">Brand Check</a>
     </div>
     <a class="nav-cta" href="../check.html">Check my brand</a>
   </div>
 </nav>
 
-<header class="hero" style="padding-bottom:56px">
+<header class="sec" style="padding-bottom:clamp(36px,4vw,52px)">
   <div class="wrap">
-    <p class="eyebrow">Show, don't tell</p>
-    <h1 style="font-size:clamp(34px,5.6vw,66px);margin-top:16px;max-width:22ch">Three athletes. Three sports. Nothing here is a flat mockup.</h1>
-    <p class="hero-sub">
-      Click into the stats. Open the shop. Download the media kit. Sign up to the list.
+    <p class="eyebrow" style="margin-bottom:24px">Show, don't tell</p>
+    <h1 data-lines style="max-width:18ch">
+      <span class="mline"><span>Three athletes.</span></span>
+      <span class="mline"><span>Three sports.</span></span>
+      <span class="mline"><span class="lime">Nothing faked.</span></span>
+    </h1>
+    <p class="lede" data-rv="0.45" style="margin-top:30px">
+      Click into the record. Open the shop. Read the media kit. Join the list — the form works.
       This is what a Pro-tier athlete looks like about three weeks after signing up.
     </p>
   </div>
 </header>
 
-<section>
+<section class="sec" style="padding-top:0;border-top:none">
   <div class="wrap">
-    <div class="grid g3">
-      <a class="card" href="jordan-oyelowo.html" style="text-decoration:none">
-        <div class="card-n">FOOTBALL · CHAMPIONSHIP</div>
-        <h3>Jordan Oyelowo</h3>
-        <p>Left winger, 24, Ashford Rovers. Came in with 61k followers, no email list, no shop and no media kit — the most common profile in British professional sport.</p>
-        <div class="price">Open the profile →</div>
+    <div class="roster">
+      <a class="ath" href="jordan-oyelowo.html" data-rv="0.05">
+        <div class="ath-img j"></div>
+        <div class="ath-txt">
+          <p class="ath-tag">Football · Championship</p>
+          <h3>Jordan<br>Oyelowo</h3>
+          <p>Left winger, 24, Ashford Rovers. Came in with 61k followers, no email list, no shop and no media kit — the most common profile in British professional sport.</p>
+          <span class="ath-go">Open the profile <span class="arw">→</span></span>
+        </div>
       </a>
-      <a class="card" href="maisie-clarke.html" style="text-decoration:none">
-        <div class="card-n">RUGBY · PREMIERSHIP WOMEN'S</div>
-        <h3>Maisie Clarke</h3>
-        <p>Flanker, 27, Kestrel Vale. Already runs junior coaching sessions on the side and until now had nowhere proper to send anyone who wanted to book one.</p>
-        <div class="price">Open the profile →</div>
+      <a class="ath" href="maisie-clarke.html" data-rv="0.14">
+        <div class="ath-img m"></div>
+        <div class="ath-txt">
+          <p class="ath-tag">Rugby · Premiership Women's</p>
+          <h3>Maisie<br>Clarke</h3>
+          <p>Flanker, 27, Kestrel Vale. Already runs junior coaching on a Saturday and until now had nowhere proper to send anyone who wanted to book one.</p>
+          <span class="ath-go">Open the profile <span class="arw">→</span></span>
+        </div>
       </a>
-      <a class="card" href="dev-raval.html" style="text-decoration:none">
-        <div class="card-n">CRICKET · COUNTY &amp; THE HUNDRED</div>
-        <h3>Dev Raval</h3>
-        <p>All-rounder, 22, Larkfield. Six months a year without a fixture, which is the cheapest attention he will ever get and it was going completely unused.</p>
-        <div class="price">Open the profile →</div>
+      <a class="ath" href="dev-raval.html" data-rv="0.23">
+        <div class="ath-img d"></div>
+        <div class="ath-txt">
+          <p class="ath-tag">Cricket · County &amp; The Hundred</p>
+          <h3>Dev<br>Raval</h3>
+          <p>All-rounder, 22, Larkfield. Six months a year without a fixture, which is the cheapest attention he'll ever get and it was going completely unused.</p>
+          <span class="ath-go">Open the profile <span class="arw">→</span></span>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<section>
+<section class="sec">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">What to look for</p>
-      <h2>Four things on every one of these pages that most athletes don't have</h2>
+    <div class="shead">
+      <p class="eyebrow" data-rv>What to look for</p>
+      <h2 data-rv="0.06">Four things on every page<br>that most athletes don't have</h2>
     </div>
-    <div class="checks">
-      <div class="check"><div class="check-n">01</div><div><h4>A media kit a brand can read in ten seconds</h4><p>Reach, engagement rate, audience split and a contact route, published and current. No sponsor has to ask, which means the athlete isn't negotiating from behind.</p></div></div>
-      <div class="check"><div class="check-n">02</div><div><h4>A signup form above the fold</h4><p>Followers are rented. This is the one asset on the page that survives an account ban, a transfer and a retirement.</p></div></div>
-      <div class="check"><div class="check-n">03</div><div><h4>Somewhere to spend money</h4><p>Merch that doesn't exist until it's paid for, plus bookable clinics and appearances. Goodwill with nowhere to go is goodwill nobody gets paid for.</p></div></div>
-      <div class="check"><div class="check-n">04</div><div><h4>A named sponsor slot</h4><p>Logos on the page, and a slot in every email that goes out. It's the thing you show a sponsor when you ask about next season.</p></div></div>
+    <div class="six">
+      <div class="si" data-rv><b>01</b><h4>A media kit a brand can read in ten seconds</h4><p>Reach, engagement rate, audience split and a contact route, published and current. No sponsor has to ask, which means the athlete isn't negotiating from behind.</p></div>
+      <div class="si" data-rv="0.05"><b>02</b><h4>A signup form, not just a follow button</h4><p>Followers are rented. This is the one asset on the page that survives an account ban, a transfer and a retirement.</p></div>
+      <div class="si" data-rv="0.1"><b>03</b><h4>Somewhere to spend money</h4><p>Merch that doesn't exist until it's paid for, plus bookable clinics and appearances. Goodwill with nowhere to go is goodwill nobody gets paid for.</p></div>
+      <div class="si" data-rv="0.15"><b>04</b><h4>A named sponsor slot</h4><p>Logos on the page, and a slot in every email that goes out. It's the thing you show a sponsor when you ask about next season.</p></div>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="wrap">
-    <h2>Want to see where you'd score before you look at prices?</h2>
-    <p>The Brand Check is free, takes about a minute, and tells you honestly if there's nothing worth fixing.</p>
-    <a class="btn" href="../check.html">Run the Brand Check →</a>
+    <h2 data-rv>Want to see where you'd score first?</h2>
+    <p data-rv="0.06">The Brand Check is free, takes about a minute, and tells you honestly if there's nothing worth fixing.</p>
+    <a class="btn" href="../check.html" data-rv="0.12"><span>Run the Brand Check</span><span class="arw">→</span></a>
   </div>
 </section>
 
-<footer>
-  <div class="wrap foot-in">
-    <div>
-      <div class="logo" style="font-size:18px;margin-bottom:8px">Ascend<span>r</span></div>
-      <div>Build your audience. Own your brand.</div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div style="max-width:44ch">
+        <p class="eyebrow nb" style="margin-bottom:14px">Ascendr</p>
+        <p style="font-size:17px">Build your audience. Own your brand.</p>
+      </div>
+      <div class="foot-links">
+        <a href="../index.html" class="tl">Home</a>
+        <a href="../pricing.html" class="tl">Pricing</a>
+        <a href="../check.html" class="tl">Brand Check</a>
+      </div>
     </div>
-    <div style="text-align:right"><a href="../index.html">Home</a> · <a href="../pricing.html">Pricing</a> · <a href="../check.html">Brand Check</a></div>
+    <div class="foot-mark">ASCEND<i>R</i></div>
   </div>
 </footer>
 
+<script src="../assets/app.js"></script>
 </body>
 </html>
