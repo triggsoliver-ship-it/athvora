@@ -1,8 +1,11 @@
 /* Ascendr — motion layer.
 
-   Design rule: CSS must never hide content. Every reveal here starts from the
-   visible state and is set up imperatively, so if this file fails to load or
-   throws, the page still reads perfectly. */
+   Rules learned the hard way:
+   1. CSS never hides content. Reveals start from the visible state and are set
+      up here, so if this file fails the page still reads perfectly.
+   2. The masked-line reveal needs overflow:hidden on the line box, but a tight
+      line-height clips Anton's ascenders. So this file owns BOTH the overflow
+      and a temporary looser line-height, and clears them when it's done. */
 (function () {
   'use strict';
 
@@ -10,33 +13,46 @@
   var canObserve = 'IntersectionObserver' in window;
   var animate = !reduce && canObserve;
 
-  /* ---- masked line reveal, driven entirely from JS ---- */
+  /* ---- masked line reveal ---- */
   function lines() {
     var groups = [].slice.call(document.querySelectorAll('[data-lines]'));
     if (!groups.length || !animate) return;
 
     groups.forEach(function (g) {
-      var inners = [].slice.call(g.querySelectorAll('.mline > span'));
-      // hide
-      inners.forEach(function (s) {
-        s.style.transform = 'translateY(105%)';
-        s.style.willChange = 'transform';
+      var masks = [].slice.call(g.querySelectorAll('.mline'));
+      if (!masks.length) return;
+
+      masks.forEach(function (m) {
+        m.style.lineHeight = '1.06';
+        m.style.overflow = 'hidden';
+        var inner = m.firstElementChild;
+        if (!inner) return;
+        inner.style.display = 'block';
+        inner.style.transform = 'translateY(105%)';
+        inner.style.willChange = 'transform';
       });
-      // reveal on the next frame so the transition has a start value
+
       requestAnimationFrame(function () {
         requestAnimationFrame(function () {
-          inners.forEach(function (s, i) {
-            s.style.transition = 'transform 1.05s cubic-bezier(.16,1,.3,1) ' + (i * 0.09) + 's';
-            s.style.transform = 'translateY(0)';
+          masks.forEach(function (m, i) {
+            var inner = m.firstElementChild;
+            if (!inner) return;
+            inner.style.transition = 'transform 1.05s cubic-bezier(.16,1,.3,1) ' + (i * 0.09) + 's';
+            inner.style.transform = 'translateY(0)';
           });
-          // clean up so nothing is left in a transformed state
+
+          // clear everything afterwards so nothing is left clipped or transformed
           setTimeout(function () {
-            inners.forEach(function (s) {
-              s.style.willChange = '';
-              s.style.transform = '';
-              s.style.transition = '';
+            masks.forEach(function (m) {
+              m.style.overflow = '';
+              m.style.lineHeight = '';
+              var inner = m.firstElementChild;
+              if (!inner) return;
+              inner.style.transition = '';
+              inner.style.transform = '';
+              inner.style.willChange = '';
             });
-          }, 1400 + inners.length * 90);
+          }, 1500 + masks.length * 90);
         });
       });
     });
@@ -47,7 +63,6 @@
     var els = [].slice.call(document.querySelectorAll('[data-rv]'));
     if (!els.length || !animate) return;
 
-    // only now do we allow the hidden state to apply
     document.documentElement.classList.add('rv-on');
 
     var io = new IntersectionObserver(function (entries) {
@@ -62,7 +77,7 @@
 
     els.forEach(function (e) { io.observe(e); });
 
-    // safety net: if anything is still hidden after 4s, show it
+    // safety net: nothing stays hidden for more than 4s
     setTimeout(function () {
       els.forEach(function (e) { e.classList.add('in'); });
     }, 4000);
@@ -71,7 +86,7 @@
   /* ---- count-up numbers ---- */
   function counters() {
     var els = [].slice.call(document.querySelectorAll('[data-count]'));
-    if (!els.length) return;
+    if (!els.length || !animate) return;   // markup holds the final figure already
 
     function fmt(v, dec, suffix, prefix) {
       var s = dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-GB');
@@ -92,9 +107,6 @@
       }
       requestAnimationFrame(step);
     }
-
-    // markup already contains the final figure, so with no JS it just reads correctly
-    if (!animate) return;
 
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
