@@ -1,49 +1,19 @@
 /* Ascendr — motion layer.
 
    Rules learned the hard way on this build:
-   1. CSS never hides content. Every reveal starts from the visible state and is
-      set up here, so if this file fails the page still reads perfectly.
-   2. No overflow-clipping masks on type. A tight line-height plus overflow:hidden
-      clips Anton's ascenders, and tearing the mask down again left stale
-      composited layers in Chrome. The headline now uses the same opacity/rise
-      as everything else — less clever, always correct.
-   3. No will-change. It bought nothing here and caused the stale layers. */
+   1. CSS never hides content. Reveals start from the visible state and are set
+      up here, so if this file fails the page still reads perfectly.
+   2. The hero headline is NOT animated. Every attempt (overflow mask, then an
+      opacity/translate rise) left it half-painted in Chrome on first load. Big
+      display type that is simply there beats big display type that sometimes
+      isn't. The rest of the page carries the motion.
+   3. No mix-blend-mode overlays, no will-change. Both broke compositing here. */
 (function () {
   'use strict';
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var canObserve = 'IntersectionObserver' in window;
   var animate = !reduce && canObserve;
-
-  var EASE = 'cubic-bezier(.16,1,.3,1)';
-
-  /* ---- headline: staggered rise, line by line ---- */
-  function lines() {
-    var groups = [].slice.call(document.querySelectorAll('[data-lines]'));
-    if (!groups.length || !animate) return;
-
-    groups.forEach(function (g) {
-      var ls = [].slice.call(g.querySelectorAll('.mline'));
-      if (!ls.length) return;
-
-      ls.forEach(function (l) {
-        l.style.opacity = '0';
-        l.style.transform = 'translateY(22px)';
-      });
-
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          ls.forEach(function (l, i) {
-            l.style.transition = 'opacity .8s ' + EASE + ' ' + (i * 0.1) + 's, transform .9s ' + EASE + ' ' + (i * 0.1) + 's';
-            // land on explicit final values and leave them there, so nothing
-            // is removed later and no stale layer can survive
-            l.style.opacity = '1';
-            l.style.transform = 'translateY(0)';
-          });
-        });
-      });
-    });
-  }
 
   /* ---- scroll reveal ---- */
   function reveals() {
@@ -64,10 +34,10 @@
 
     els.forEach(function (e) { io.observe(e); });
 
-    // safety net: nothing stays hidden for more than 4s
+    // safety net: nothing stays hidden for more than 3s
     setTimeout(function () {
       els.forEach(function (e) { e.classList.add('in'); });
-    }, 4000);
+    }, 3000);
   }
 
   /* ---- count-up numbers ---- */
@@ -85,7 +55,7 @@
       var dec = (el.dataset.count.split('.')[1] || '').length;
       var suffix = el.dataset.suffix || '';
       var prefix = el.dataset.prefix || '';
-      var dur = 1400, t0 = null;
+      var dur = 1300, t0 = null;
       function step(ts) {
         if (!t0) t0 = ts;
         var p = Math.min((ts - t0) / dur, 1);
@@ -119,30 +89,10 @@
     window.addEventListener('scroll', check, { passive: true });
   }
 
-  /* ---- hero parallax ---- */
-  function parallax() {
-    if (!animate) return;
-    var bg = document.querySelector('.hero-bg');
-    if (!bg) return;
-    var raf = null;
-    window.addEventListener('scroll', function () {
-      if (raf) return;
-      raf = requestAnimationFrame(function () {
-        var y = window.scrollY;
-        if (y < window.innerHeight * 1.2) {
-          bg.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0)';
-        }
-        raf = null;
-      });
-    }, { passive: true });
-  }
-
   function init() {
     try { navState(); } catch (e) {}
     try { reveals(); } catch (e) {}
     try { counters(); } catch (e) {}
-    try { parallax(); } catch (e) {}
-    try { lines(); } catch (e) {}
   }
 
   if (document.readyState === 'loading') {
