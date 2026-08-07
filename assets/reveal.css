@@ -1,0 +1,18 @@
+/* Ascendr — reveal states, loaded AFTER style.css so these win.
+
+   Design rule: CSS must never hide content. style.css sets the hidden state for
+   .mline > span and [data-rv]; these rules neutralise that and re-scope it
+   behind .rv-on, which app.js only adds once it is running. Result: if JS fails,
+   every word on the page is still visible. */
+
+/* masked headline lines — app.js now applies the transform inline */
+.mline > span { transform: none; transition: none; }
+
+/* scroll reveals — hidden only when app.js has opted in */
+[data-rv] { opacity: 1; transform: none; filter: none; }
+.rv-on [data-rv] { opacity: 0; transform: translateY(26px); filter: blur(5px); }
+.rv-on [data-rv].in { opacity: 1; transform: none; filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rv-on [data-rv] { opacity: 1; transform: none; filter: none; }
+}
