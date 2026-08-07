@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand Check — Ascendr</title>
+<meta name="description" content="Six things that decide whether a brand ever calls you. Free, no signup, evidence quoted on every line.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="demobar">Concept demo — scores are generated to show the flow, not crawled from live profiles. Same input always returns the same report.</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="index.html">Ascend<span>r</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="demo/index.html">Demo profiles</a>
+      <a href="check.html" class="on">Brand Check</a>
+    </div>
+    <a class="nav-cta" href="pricing.html">See pricing</a>
+  </div>
+</nav>
+
+<header class="hero" style="padding-bottom:56px">
+  <div class="wrap">
+    <div class="hero-tag"><span class="dot live"></span> Free · no signup · nothing stored</div>
+    <h1 style="font-size:clamp(36px,5.6vw,68px);max-width:22ch">The Brand Check</h1>
+    <p class="hero-sub" style="margin-top:22px">
+      Six things that decide whether a brand ever calls you — scored, with the evidence quoted on every line.
+      Enter a name or a handle and we'll read the public footprint the way a sponsor's marketing manager would.
+    </p>
+
+    <form id="cform" class="checkbox-form" style="margin-top:34px" autocomplete="off">
+      <div class="field">
+        <input id="handle" type="text" placeholder="Your name or @handle" aria-label="Your name or handle">
+      </div>
+      <button class="btn" type="submit">Run my check →</button>
+    </form>
+    <p class="hint">Try one of the demo athletes, or type any name — the report is generated deterministically, so the same input always returns the same scores. <b>Type "clean" to see what an honest all-clear looks like.</b></p>
+    <div class="chips">
+      <button class="chip" data-v="@jordanoyelowo">@jordanoyelowo</button>
+      <button class="chip" data-v="@maisieclarke7">@maisieclarke7</button>
+      <button class="chip" data-v="@devraval">@devraval</button>
+      <button class="chip" data-v="clean">clean (all-clear example)</button>
+    </div>
+
+    <div id="stage">
+      <div id="crawl" class="crawl hidden"></div>
+      <div id="report" class="hidden"></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What we look at</p>
+      <h2>Six pillars, and why each one costs you money</h2>
+    </div>
+    <div class="checks">
+      <div class="check"><div class="check-n">01</div><div><h4>Do you exist?</h4><p>A searchable name and a domain you control — or just profiles on platforms that could change the rules tomorrow. If a sponsor's first search lands on someone else's website, you don't own your own front door.</p></div></div>
+      <div class="check"><div class="check-n">02</div><div><h4>The media kit test</h4><p>Reach, engagement, audience split, contact route and a rate. A marketing manager with a budget and a deadline gives up after two minutes and calls someone easier.</p></div></div>
+      <div class="check"><div class="check-n">03</div><div><h4>Consistency</h4><p>Whether your rhythm survives a bad run of form, an injury or a loan spell — because the gaps are exactly when an audience decides whether it stays.</p></div></div>
+      <div class="check"><div class="check-n">04</div><div><h4>Engagement quality</h4><p>Replies and saves against the benchmark for your follower count. Brands stopped buying follower numbers a long time ago.</p></div></div>
+      <div class="check"><div class="check-n">05</div><div><h4>Owned audience</h4><p>An email list on your own domain. This is almost always the lowest score in the report, and it's the one that matters most the day an account disappears.</p></div></div>
+      <div class="check"><div class="check-n">06</div><div><h4>Commercial doors</h4><p>A shop, a booking link, an enquiry form. Goodwill with nowhere to go is goodwill you never get paid for.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>If your report came back clean, we'll say so</h2>
+    <p>We wrote the check and we sell the fixes, so the check has to be worth trusting on its own. Dressing rooms talk, and honesty compounds faster than advertising.</p>
+    <a class="btn" href="pricing.html">See what fixing it costs →</a>
+    <small>Three tiers, from £39 a month. No percentage of anything you earn, ever.</small>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <div>
+      <div class="logo" style="font-size:18px;margin-bottom:8px">Ascend<span>r</span></div>
+      <div>Build your audience. Own your brand.</div>
+    </div>
+    <div style="text-align:right">
+      <div><a href="index.html">Home</a> · <a href="pricing.html">Pricing</a> · <a href="demo/index.html">Demo profiles</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/check.js"></script>
+</body>
+</html>
