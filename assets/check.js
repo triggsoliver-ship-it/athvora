@@ -229,7 +229,7 @@
         '<h4 style="margin-top:30px">What you own today</h4>' +
         '<div class="cost">' + ownH + '</div>' +
         '<p style="margin-top:22px"><strong>Athvora builds all five.</strong> You approve everything, and we take 0% of what any of it earns.</p>' +
-        '<a class="btn" href="pricing.html" style="margin-top:26px"><span>See what building it costs</span><span class="arw">→</span></a>' +
+        '<a class="btn" href="/pricing" style="margin-top:26px"><span>See what building it costs</span><span class="arw">→</span></a>' +
         '<p class="tiny" style="margin-top:14px">Demo figures, generated from your Score band to show the report format — not calculated from your real profiles, and not a promise of earnings. The production Score reads live public pages. No signup, nothing stored, and this report is yours either way.</p>' +
         '</div>';
     }
