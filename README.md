@@ -1,44 +1,33 @@
-# Ascendr — concept demo
+# ATHVORA — concept demo
 
-**Build your audience. Own your brand.**
+**Your career builds attention. Don't give it away.**
 
-A shareable concept demo for Ascendr: a complete digital brand operation for professional
-athletes, sold as a flat monthly fee that never takes a percentage of what the athlete earns.
+The commercial operating system for an athlete's name. Athvora builds an athlete's audience,
+brand and business while they play — one flat fee, 15 minutes of their week, and 0% of
+anything they earn.
+
+Live at **[athvora.co.uk](https://athvora.co.uk)**. (Spelling matters: *Athora* without the V
+is an unrelated insurance group.)
 
 ## What's here
 
 | Page | What it shows |
 |---|---|
-| `index.html` | Positioning, the five modules, the "eight years / fifty years" argument |
-| `check.html` | **The Brand Check — it works.** Enter any name or handle and get a scored six-pillar report |
-| `pricing.html` | Three tiers (£39 / £399 / £1,999), à-la-carte modules, squad and union rates, no-lock-in terms |
-| `demo/` | Three fully built fictional athlete profiles: a Championship footballer, a Premiership women's rugby flanker, a county cricketer |
+| `index.html` | The funnel: outcome-led hero, rented-vs-owned, before/after, You Play We Build, 0%, Score trajectory, eight-years/fifty-years |
+| `check.html` | **The Athvora Score** — six scored pillars, indicative value ranges, and an ownership checklist |
+| `pricing.html` | One product: Athvora Pro £399/mo (Starter £99 for emerging athletes). À-la-carte breakdown kept for transparency |
+| `demo/` | Three fully built fictional athlete profiles: Championship footballer, Premiership women's rugby flanker, county cricketer |
 
-## The Brand Check
+## Honesty notes — kept deliberately visible on the site
 
-Top-of-funnel diagnostic, ported from the ScaleYourClub playbook. Scores six pillars and
-quotes evidence on every line:
+- All three athletes are fictional and labelled as such on every page.
+- The Score is generated deterministically from the input string (same input, same report).
+  The £ ranges are derived from the Score band and labelled as demo figures, not valuations.
+- Pricing is indicative. No testimonials appear anywhere because none exist yet.
+- Nothing is stored. The forms post nowhere.
 
-1. Do you exist? — own domain vs. rented platform profiles
-2. The media kit test — could a brand price you in two minutes?
-3. Consistency — does the rhythm survive a bad run of form?
-4. Engagement quality — conversation vs. hollow reach
-5. Owned audience — an email list, or nothing?
-6. Commercial doors — shop, bookings, enquiries
-
-Scores are generated deterministically from the input string, so the same handle always
-returns the same report. In production these come from a real crawl of public pages.
-
-Type **`clean`** to see the honest all-clear report — the one that says there's nothing to
-sell you. That mechanic is the whole trust proposition.
-
-## Caveats, stated plainly
-
-- All three athletes are fictional. Any resemblance to a real player is because the problem is this common.
-- Pricing is indicative and deliberately open to argument.
-- The Brand Check generates illustrative scores; it does not crawl live profiles.
-- Product images are placeholders.
-- Nothing is stored. The newsletter form is a demo and posts nowhere.
+Type **`clean`** into the Score to see the honest all-clear — the report that says there's
+nothing to sell you. That mechanic is the whole trust proposition.
 
 ## Running locally
 
@@ -46,9 +35,9 @@ Static files, no build step.
 
 ```bash
 python3 -m http.server 8000
-# then open http://localhost:8000
 ```
 
 ## Deploying
 
-Static site — deploys to Vercel with no configuration. `vercel.json` just enables clean URLs.
+Static site on Vercel (project: ascendr-demo — repo predates the rebrand).
+`vercel.json` disables clean URLs. Domain: athvora.co.uk via IONOS DNS.
