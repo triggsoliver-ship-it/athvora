@@ -1,4 +1,4 @@
-/* Ascendr Brand Check — demo engine.
+/* Athvora Score — demo engine.
    Deterministic from the input string, so the same handle always returns the
    same report. In production these scores come from a real crawl of public
    pages and social profiles; here they are generated so the flow is reviewable. */
@@ -185,7 +185,7 @@
     var h = '<div class="report">';
     h += '<div class="rtop">' + ring(r.overall) +
       '<div class="rwho"><h3>' + esc(handle.trim().replace(/^@/, '')) + '</h3>' +
-      '<div class="rsub">Ascendr Brand Check · ' +
+      '<div class="rsub">Athvora Score · ' +
       new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) +
       '</div><div class="rverd">' + verdictFor(r) + '</div></div></div>';
 
@@ -206,16 +206,31 @@
         'whose report probably will not look like this.</p></div>';
     } else {
       var seed = hash(r.clean);
-      h += '<div class="rfoot"><h4>What this is costing you</h4>' +
-        '<p>Rough, honest estimates for an athlete at your level. Not a promise — a starting point for a conversation.</p>' +
+      var postLow = Math.round((60 + r.overall * 9) / 10) * 10;
+      var postHigh = Math.round((postLow * 2.1) / 10) * 10;
+      var annLow = Math.round((postLow * 14) / 100) * 100;
+      var annHigh = Math.round((postHigh * 17) / 100) * 100;
+      var own = [
+        ['A domain of your own', r.scores.exists >= 72],
+        ['A fan database', r.scores.owned >= 72],
+        ['A media kit', r.scores.kit >= 72],
+        ['A store', r.scores.commercial >= 72],
+        ['A booking channel', r.scores.commercial >= 85]
+      ];
+      var ownH = own.map(function (o) {
+        return '<div><b style="color:' + (o[1] ? 'var(--mint)' : 'var(--ember)') + '">' + (o[1] ? '✓' : '✗') + '</b><span>' + o[0] + (o[1] ? ' — you have this' : ' — missing') + '</span></div>';
+      }).join('');
+      h += '<div class="rfoot"><h4>What a footprint like this is indicatively worth</h4>' +
+        '<p>Based on your Score band, not a crawl of your real numbers — treat it as the shape of the opportunity, not a valuation.</p>' +
         '<div class="cost">' +
-        '<div><b>~' + (2 + (seed % 7)) + '</b><span>brand enquiries a year that currently have nowhere to land</span></div>' +
-        '<div><b>0</b><span>followers you could reach tomorrow if an account disappeared tonight</span></div>' +
-        '<div><b>£' + (140 + (seed % 9) * 40) + '</b><span>a month of merch margin left on the table at your engagement level</span></div>' +
-        '<div><b>' + (6 + (seed % 5)) + ' yrs</b><span>rough earning window left to turn a name into something that outlasts it</span></div>' +
+        '<div><b>£' + postLow + '–£' + postHigh + '</b><span>indicative range per sponsored post at this Score band</span></div>' +
+        '<div><b>£' + annLow.toLocaleString('en-GB') + '–£' + annHigh.toLocaleString('en-GB') + '</b><span>indicative annual commercial potential, if the gaps below get fixed</span></div>' +
         '</div>' +
-        '<a class="btn" href="pricing.html" style="margin-top:28px"><span>See what fixing this costs</span><span class="arw">→</span></a>' +
-        '<p class="tiny" style="margin-top:18px">No signup. Nothing stored. This report is yours whether you ever speak to us again or not.</p>' +
+        '<h4 style="margin-top:30px">What you own today</h4>' +
+        '<div class="cost">' + ownH + '</div>' +
+        '<p style="margin-top:22px"><strong>Athvora builds all five.</strong> You approve everything, and we take 0% of what any of it earns.</p>' +
+        '<a class="btn" href="pricing.html" style="margin-top:26px"><span>See what building it costs</span><span class="arw">→</span></a>' +
+        '<p class="tiny" style="margin-top:14px">Demo figures, generated from your Score band to show the report format — not calculated from your real profiles, and not a promise of earnings. The production Score reads live public pages. No signup, nothing stored, and this report is yours either way.</p>' +
         '</div>';
     }
 
