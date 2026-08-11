@@ -39,5 +39,7 @@ python3 -m http.server 8000
 
 ## Deploying
 
-Static site on Vercel (project: ascendr-demo — repo predates the rebrand).
-`vercel.json` disables clean URLs. Domain: athvora.co.uk via IONOS DNS.
+Static site on Vercel (project: **athvora**, repo: **triggsoliver-ship-it/athvora**).
+`vercel.json` enables clean URLs, so pages serve extensionless (`/pricing`, `/check`,
+`/demo/jordan-oyelowo`); `.html` URLs 308-redirect. Domain: athvora.co.uk via IONOS DNS
+(apex A → Vercel, www CNAME; apex 308s to www).
