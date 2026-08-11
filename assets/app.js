@@ -1,4 +1,4 @@
-/* Ascendr — motion layer.
+/* Athvora — motion layer.
 
    Rules learned the hard way on this build:
    1. CSS never hides content. Reveals start from the visible state and are set
