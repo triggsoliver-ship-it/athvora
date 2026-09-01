@@ -29,15 +29,15 @@
 var ATHVORA_CHECKOUT = {
 
   /* Athvora Starter — £99/month, no setup fee. /pricing tier card. */
-  starter:    '',
+  starter:    'https://buy.stripe.com/9B64gyh0F8NF2v98UIeIw0d',
 
   /* Athvora Pro — £399/month plus a one-off £999 setup fee. /pricing, on both
      the Pro tier card and the "All five — Pro" module row. */
-  pro:        '',
+  pro:        'https://buy.stripe.com/6oU14m5hX9RJb1FdaYeIw0e',
 
   /* Founding Athlete — Athvora Pro at £199/month, no setup fee, rate held for
      12 months. /founding only. Twenty places, allocated by hand. */
-  founding:   '',
+  founding:   'https://buy.stripe.com/bJe14m4dT6FxglZc6UeIw0f',
 
   /* Identity module — £499 setup, then £39/month. */
   identity:   '',
@@ -55,7 +55,7 @@ var ATHVORA_CHECKOUT = {
      Fanbase on the pricing page is an em-dash, which has never been resolved
      into a number. Do not put a setup fee on this link without fixing the page
      first — see PAYMENTS.md. */
-  fanbase:    ''
+  fanbase:    'https://buy.stripe.com/14A14m4dTbZR0n1c6UeIw0g'
 };
 
 /* Deliberately absent, because none of them has a single confirmed price:
