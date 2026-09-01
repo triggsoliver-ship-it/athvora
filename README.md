@@ -1,4 +1,4 @@
-# ATHVORA — concept demo
+# ATHVORA
 
 **Your career builds attention. Don't give it away.**
 
@@ -17,14 +17,19 @@ is an unrelated insurance group.)
 | `check.html` | **The Athvora Score** — six scored pillars, indicative value ranges, and an ownership checklist |
 | `pricing.html` | One product: Athvora Pro £399/mo (Starter £99 for emerging athletes). À-la-carte breakdown kept for transparency |
 | `demo/` | Three fully built fictional athlete profiles: Championship footballer, Premiership women's rugby flanker, county cricketer |
+| `assets/checkout.js` | **Every Stripe Payment Link on the site**, in one config object at the top of the file |
+| `PAYMENTS.md` | Which config key sells what, and the exact price each link must charge |
 
 ## Honesty notes — kept deliberately visible on the site
 
 - All three athletes are fictional and labelled as such on every page.
 - The Score is generated deterministically from the input string (same input, same report).
   The £ ranges are derived from the Score band and labelled as demo figures, not valuations.
-- Pricing is indicative. No testimonials appear anywhere because none exist yet.
-- Nothing is stored. The forms post nowhere.
+- Pricing is settled, published in full and buyable. See `PAYMENTS.md` for which Stripe
+  Payment Link sells what, at what price. No testimonials appear anywhere because none
+  exist yet.
+- Nothing is stored. The forms post nowhere, and the buy buttons are plain links out to
+  Stripe — no Stripe code runs on this site and no card details touch it.
 
 Type **`clean`** into the Score to see the honest all-clear — the report that says there's
 nothing to sell you. That mechanic is the whole trust proposition.
