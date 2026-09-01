@@ -49,7 +49,8 @@
     <p class="lede" data-rv="0.4" style="margin-top:30px">
       This website has no database, no accounts, no cookies and no analytics. The Athvora Score
       runs entirely inside your own browser and never sends what you type to us or to anybody
-      else. If you want us to have your details, you have to email us.
+      else. If you want us to have your details you either email us, or you buy something — and
+      the card details go to Stripe rather than to us.
     </p>
   </div>
 </header>
@@ -58,7 +59,7 @@
   <div class="wrap">
     <div class="prose legal">
 
-      <p class="stamp">Last updated 12 August 2026.</p>
+      <p class="stamp">Last updated 31 August 2026.</p>
 
       <h2>Who we are</h2>
       <p>Athvora is a trading name of <strong>Keelson Holdings Ltd</strong>, a company registered in England and Wales, company number <strong>17359226</strong>. Registered office: 71-75 Shelton Street, Covent Garden, London WC2H 9JQ.</p>
@@ -70,12 +71,14 @@
       <ul>
         <li><strong>The Athvora Score at /check.</strong> You type a name or a handle. A script that has already been downloaded to your browser turns that text into a score and writes the report onto the page. Your input is never sent to us, never sent to any other company, and never written to a database or to your browser's storage. Close the tab and it is gone. The list of “reading the public footprint” lines is an animation showing what the production version would do — no page is being crawled while you watch.</li>
         <li><strong>The “join the list” boxes on the demo athlete profiles.</strong> They are switched off. Pressing the button clears the field and shows a confirmation message; the email address you typed never leaves your browser. The pages say so, and the code agrees.</li>
+        <li><strong>The buy buttons on the pricing and Founding Athletes pages.</strong> They are ordinary links. Nothing is collected, sent or stored while you are on this site. If you follow one you leave for a checkout page on Stripe's own domain, and anything you type there you are typing into Stripe rather than into us.</li>
         <li><strong>Everything else</strong> is text and links.</li>
       </ul>
       <p>There is no signup, no login, no newsletter, no chat widget and no tracking pixel anywhere on this site.</p>
 
       <h2>When we do get your personal data</h2>
       <p>Only when you send it to us. The apply and contact buttons on the Founding Athletes and Partners pages are <em>mailto:</em> links that open your own email app addressed to hello@athvora.co.uk. Nothing reaches us until you press send — and then we have your email address, your name and whatever you chose to write, which for an application usually means your sport, level, club and social handles.</p>
+      <p>Or when you buy. The buy buttons hand you over to Stripe's own checkout page, where you give <em>Stripe</em> your name, email address and card details. Stripe then passes us everything except the card number: your name, your email address, your billing country and the last four digits, which is what we need to set your service up and account for the payment. The full card number never reaches us and we could not store it if we wanted to.</p>
 
       <h2>Why we use it, and our lawful basis</h2>
       <ul>
@@ -88,7 +91,8 @@
       <h2>Who else sees it</h2>
       <ul>
         <li><strong>Vercel</strong> — our hosting provider. Every page here is served by Vercel, so Vercel's servers handle your IP address and the usual web-server request logs.</li>
-        <li><strong>Google</strong> — every page loads three fonts from fonts.googleapis.com and fonts.gstatic.com. Your browser fetches them from Google directly, which tells Google your IP address and which page you were on. That is the only third-party request this site makes, we'd rather it didn't happen, and we intend to move the fonts onto our own server.</li>
+        <li><strong>Google</strong> — every page loads three fonts from fonts.googleapis.com and fonts.gstatic.com. Your browser fetches them from Google directly, which tells Google your IP address and which page you were on. That is the only third-party request these pages make while they load, we'd rather it didn't happen, and we intend to move the fonts onto our own server. Following a buy button is you navigating to Stripe, not this page fetching anything.</li>
+        <li><strong>Stripe</strong> — our payment processor, and only if you actually buy something. Stripe collects and handles the card details on its own pages under its own privacy policy. No Stripe code, script or iframe runs on this website. Stripe tells us your name, email address, billing country and the last four digits of the card, and never the full number.</li>
         <li><strong>Our email provider</strong> — if you email us, your message sits in our inbox like any other email.</li>
       </ul>
       <p>That is the entire list. There is no analytics provider, no advertising network, no form-handling service and no CRM attached to this website. We don't sell personal data and we don't rent it.</p>
@@ -110,10 +114,10 @@
 
       <h2>Cookies</h2>
       <p>This site sets no cookies. It stores nothing in your browser — no local storage, no session storage, no service worker. That is why there is no cookie banner: there is nothing to consent to.</p>
-      <p>The only third party your browser contacts is Google, for the fonts. If Google stores anything in your browser, that is Google's doing rather than ours, and blocking it won't break this site.</p>
+      <p>The only third party your browser contacts while it is on this site is Google, for the fonts. If Google stores anything in your browser, that is Google's doing rather than ours, and blocking it won't break this site.</p>
 
       <h2>Changes to this notice</h2>
-      <p>The moment this site starts collecting something — a real signup form, a checkout, analytics — this page changes first and the date at the top moves.</p>
+      <p>A checkout arrived on 31 August 2026 and this page changed with it — that is what the Stripe entries above are. The next thing that collects anything, whether that is a signup form, an account or analytics, gets the same treatment: this page changes first and the date at the top moves.</p>
 
     </div>
   </div>
