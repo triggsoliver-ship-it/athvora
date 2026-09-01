@@ -41,6 +41,38 @@ setup figures are **one-off**.
 | `fanbase` | `/pricing` — module 04 | Fanbase | **£49/month recurring. NO setup charge — see the warning below.** |
 | `commercial` | `/pricing` — module 05 | Commercial | **£299 one-off setup + £149/month recurring.** |
 
+### Link status — 1 September 2026
+
+Four links are live. Four keys are **deliberately** still empty strings.
+
+| Key | Status | Configured value |
+|---|---|---|
+| `starter` | **LIVE** | `https://buy.stripe.com/9B64gyh0F8NF2v98UIeIw0d` |
+| `pro` | **LIVE** | `https://buy.stripe.com/6oU14m5hX9RJb1FdaYeIw0e` |
+| `founding` | **LIVE** | `https://buy.stripe.com/bJe14m4dT6FxglZc6UeIw0f` |
+| `fanbase` | **LIVE** | `https://buy.stripe.com/14A14m4dTbZR0n1c6UeIw0g` |
+| `identity` | empty — no Stripe product exists yet | `''` → contact fallback |
+| `content` | empty — no Stripe product exists yet | `''` → contact fallback |
+| `store` | empty — no Stripe product exists yet | `''` → contact fallback |
+| `commercial` | empty — no Stripe product exists yet | `''` → contact fallback |
+
+The four module keys are not an oversight and not a to-do left half-done. No
+Payment Link has been created for Identity, Content Engine, Store or
+Commercial, so those CTAs keep the `mailto:` behaviour described under "How
+the fallback works" below. **Leave them as `''`.** A placeholder string would
+be rejected by the regex anyway, but an empty string is the honest, working
+state and is what the checklist above expects.
+
+> **Still to verify in Stripe.** Checklist item 1 — "price in Stripe matches
+> the row in the table above, to the penny" — is the one thing that cannot be
+> confirmed from this repository. The four live URLs were supplied as
+> already-created Payment Links; what each one actually charges, its currency,
+> its recurring interval and whether tax collection is off are only visible in
+> the Stripe dashboard. Open each of the four links and check them against the
+> table above before pointing customers at `/pricing` and `/founding`. Note in
+> particular that `pro` must show **both** line items: £999 one-off setup and
+> £399/month.
+
 ### Fanbase — read this before creating the link
 
 The setup column for Fanbase on the pricing page is an em-dash (`—`), not a
