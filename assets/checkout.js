@@ -39,17 +39,29 @@ var ATHVORA_CHECKOUT = {
      12 months. /founding only. Twenty places, allocated by hand. */
   founding:   'https://buy.stripe.com/bJe14m4dT6FxglZc6UeIw0f',
 
-  /* Identity module — £499 setup, then £39/month. */
-  identity:   '',
+  /* Athvora Elite — £1,999/month. /pricing, under the two tier cards. Carried
+     a "from" price and no real CTA until 1 September 2026, when the floor
+     became the price and the page was changed in the same commit. No setup
+     fee is published for Elite, so this link must be a single monthly line
+     item; if a setup fee is ever added, change the page and PAYMENTS.md
+     first. */
+  elite:      'https://buy.stripe.com/3cI6oG7q5bZRd9Nfj6eIw0t',
 
-  /* Content Engine module — £299 setup, then £199/month. */
-  content:    '',
+  /* Identity module — two line items: £499 one-off setup and £39/month, so
+     the first payment is £538. */
+  identity:   'https://buy.stripe.com/5kQ28qh0Fd3V8Txfj6eIw0p',
 
-  /* Store module — £249 setup, then £29/month. */
-  store:      '',
+  /* Content Engine module — two line items: £299 one-off setup and £199/month,
+     so the first payment is £498. */
+  content:    'https://buy.stripe.com/28E9AS8u92phc5J1sgeIw0q',
 
-  /* Commercial module — £299 setup, then £149/month. */
-  commercial: '',
+  /* Store module — two line items: £249 one-off setup and £29/month, so the
+     first payment is £278. */
+  store:      'https://buy.stripe.com/bJe6oG7q57JBd9N2wkeIw0r',
+
+  /* Commercial module — two line items: £299 one-off setup and £149/month, so
+     the first payment is £448. */
+  commercial: 'https://buy.stripe.com/fZu9AS39P7JBd9Nc6UeIw0s',
 
   /* Fanbase module — £49/month, and no setup charge. The setup column for
      Fanbase on the pricing page is an em-dash, which has never been resolved
@@ -58,11 +70,11 @@ var ATHVORA_CHECKOUT = {
   fanbase:    'https://buy.stripe.com/14A14m4dTbZR0n1c6UeIw0g'
 };
 
-/* Deliberately absent, because none of them has a single confirmed price:
-   Athvora Elite ("from £1,999/mo"), the Squad licence (£49 or £199 per head,
-   minimum twenty), the union member benefit ("from £15"), and any Fanbase
-   setup fee. Those stay "talk to us" until a human decides the number. Adding
-   a key here without adding the row to PAYMENTS.md defeats the point of both. */
+/* Deliberately absent, because none of them has a single confirmed price: the
+   Squad licence (£49 or £199 per head, minimum twenty), the union member
+   benefit ("from £15"), and any Fanbase setup fee. Those stay "talk to us"
+   until a human decides the number. Adding a key here without adding the row
+   to PAYMENTS.md defeats the point of both. */
 
 (function () {
   'use strict';
